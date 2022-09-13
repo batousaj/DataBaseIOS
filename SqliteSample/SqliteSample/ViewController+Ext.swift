@@ -21,8 +21,20 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("SqliteSample:: didSelectRowAt")
+        let storyboard = UIStoryboard.init(name: "DetailView", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
+        let navigator = UINavigationController.init(rootViewController: viewController)
+        self.navigationController?.present(navigator, animated: true)
+        
+    }
+    
     @objc func onAddNameList() {
         print("SqliteSample:: Add name list")
+        let storyboard = UIStoryboard.init(name: "DetailView", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

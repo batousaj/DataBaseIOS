@@ -11,8 +11,6 @@ class ViewController: UIViewController {
     
     let nameList = UITableView()
     
-    @IBOutlet weak var navigator: UINavigationBar!
-    
     let nameInfo = [NameInfo]()
 
     override func viewDidLoad() {
@@ -27,15 +25,18 @@ class ViewController: UIViewController {
     }
     
     func setUINavigatorView() {
-        navigator.items?.first?.title = "Particapant list"
+        
+        self.title = "Particapant list"
+        self.navigationController?.navigationBar.backgroundColor = .systemGray6
         
         guard let plusImage = UIImage.init(systemName: "person.fill.badge.plus") else {
             print("SqliteSample:: Wrong system image name")
             return
         }
-        
+
         let barButton = UIBarButtonItem.init(image: plusImage, style: .done, target: self, action: #selector(onAddNameList))
-//        self.navigator.navigationItem.rightBarButtonItem = barButton
+        barButton.tintColor = .black
+        self.navigationController?.navigationBar.items?.first?.rightBarButtonItem = barButton
     }
     
     func createTableNameList() {
@@ -46,15 +47,14 @@ class ViewController: UIViewController {
         nameList.register(ViewCellCustom.self, forCellReuseIdentifier: "ListNameCell")
         
         let contraints = [
-            self.nameList.topAnchor.constraint(equalTo: self.navigator.bottomAnchor, constant: 10),
+            self.nameList.topAnchor.constraint(equalTo: self.view.topAnchor , constant: 100),
             self.nameList.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             self.nameList.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.nameList.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+            self.nameList.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20)
         ]
                 
         NSLayoutConstraint.activate(contraints)
     }
-    
     
 }
 
