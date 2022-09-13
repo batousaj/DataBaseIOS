@@ -165,10 +165,13 @@ extension DetailViewController {
         
         if self.editting.titleLabel?.text == "Save" {
             if (!isModal) {
+//                DataBaseManager.sharedInstance.addParticipant([], action: "add")
                 self.navigationController?.popViewController(animated: true)
             } else {
+//                DataBaseManager.sharedInstance.addParticipant([], action: "edit")
                 self.dismiss(animated: true)
             }
+            
         }
         
         if self.editting.titleLabel?.text == "Edit" {

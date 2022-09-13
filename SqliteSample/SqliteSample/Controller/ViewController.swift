@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         nameList.register(ViewCellCustom.self, forCellReuseIdentifier: "ListNameCell")
         
         let contraints = [
-            self.nameList.topAnchor.constraint(equalTo: self.view.topAnchor , constant: 100),
+            self.nameList.topAnchor.constraint(equalTo: self.view.topAnchor , constant: 120),
             self.nameList.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             self.nameList.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.nameList.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20)
@@ -56,5 +56,8 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate(contraints)
     }
     
+    func fecthData() {
+        
+    }
 }
 

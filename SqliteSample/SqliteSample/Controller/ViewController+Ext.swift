@@ -11,8 +11,7 @@ import UIKit
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return nameInfo.count
-        return 4
+        return nameInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -21,13 +20,16 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("SqliteSample:: didSelectRowAt")
         let storyboard = UIStoryboard.init(name: "DetailView", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
         let navigator = UINavigationController.init(rootViewController: viewController)
         self.navigationController?.present(navigator, animated: true)
-        
     }
     
     @objc func onAddNameList() {
