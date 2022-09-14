@@ -23,6 +23,8 @@ class DetailViewController : UIViewController {
     
     let editting = UIButton()
     
+    var nameInfo:Model.NameInfo!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         overview()
@@ -31,7 +33,7 @@ class DetailViewController : UIViewController {
             self.createViewInfoWith(name: nil, age: nil, address: nil)
         } else {
             self.createEditView(StateEdit.edit)
-            self.createViewInfoWith(name: "avc", age: "bcs", address: "def")
+            self.createViewInfoWith(name: self.nameInfo.name, age: self.nameInfo.age, address: self.nameInfo.address)
         }
     }
     
@@ -41,6 +43,10 @@ class DetailViewController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    public func getDataFromTable(_ model : Model.NameInfo) {
+        self.nameInfo = model
     }
     
     func overview() {
@@ -164,11 +170,29 @@ extension DetailViewController {
         print("SqliteSample:: OnClickEditting")
         
         if self.editting.titleLabel?.text == "Save" {
+                        
+            if let nameT = self.name.text, let ageT = self.age.text, let addressT = self.address.text, nameT != "" && ageT != "" && addressT != "" {
+                let data = [Model.name : nameT,
+                            Model.age  : ageT,
+                            Model.address : addressT]
+                                          
+                DataBaseManager.sharedInstance.doParticipant(data, action: "Add") { results in
+                    print("Update data %s", results ? "Successed" : "Failed")
+                }
+            } else {
+                let alertController = UIAlertController.init(title: "Warning", message: "Missing some infomation", preferredStyle: .alert)
+                let alert = UIAlertAction.init(title: "OK", style: .default) { action in
+//                    self.dismiss(animated: true)
+                }
+                alertController.addAction(alert)
+                
+                self.present(alertController, animated: true)
+                return
+            }
+            
             if (!isModal) {
-//                DataBaseManager.sharedInstance.addParticipant([], action: "add")
                 self.navigationController?.popViewController(animated: true)
             } else {
-//                DataBaseManager.sharedInstance.addParticipant([], action: "edit")
                 self.dismiss(animated: true)
             }
             

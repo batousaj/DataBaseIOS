@@ -11,12 +11,14 @@ import UIKit
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nameInfo.count
+//        return nameInfo.count
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListNameCell", for: indexPath) as! ViewCellCustom
-        cell.createCellView()
+//        cell.setDataForCell(self.nameInfo[indexPath.row].name, age: self.nameInfo[indexPath.row].age)
+        cell.setDataForCell("Thien Vu", age: "23")
         return cell
     }
     
@@ -26,8 +28,16 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("SqliteSample:: didSelectRowAt")
+        let cell = tableView.cellForRow(at: indexPath) as! ViewCellCustom
         let storyboard = UIStoryboard.init(name: "DetailView", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
+        
+        self.nameInfo.forEach { info in
+            if info.name == cell.name.text {
+                viewController.getDataFromTable(info)
+            }
+        }
+        
         let navigator = UINavigationController.init(rootViewController: viewController)
         self.navigationController?.present(navigator, animated: true)
     }

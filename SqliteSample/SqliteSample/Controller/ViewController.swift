@@ -11,12 +11,24 @@ class ViewController: UIViewController {
     
     let nameList = UITableView()
     
-    let nameInfo = [NameInfo]()
+    var nameInfo = [Model.NameInfo]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         createUIView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !self.checkExistFileManager() { // file do not exist
+            DataBaseManager.sharedInstance.createNewTable("userinfo.sqlite")
+        } else {
+            if !self.fecthData() {
+                fatalError("ViewController :: No have data on data base")
+            }
+        }
     }
 
     func createUIView() {
@@ -56,8 +68,33 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate(contraints)
     }
     
-    func fecthData() {
+    func fecthData() -> Bool {
         
+        self.nameInfo = Model.fecthData()
+        
+        if self.nameInfo.count > 0 {
+            return true
+        }
+        
+        return false
     }
+    
+    func checkExistFileManager() -> Bool {
+        let search = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let path = search[0] as String
+        let url = NSURL(fileURLWithPath: path)
+        if let component = url.appendingPathComponent("userinfo.sqlite") {
+            let file = component.path
+            let fileManager = FileManager.default
+            if fileManager.fileExists(atPath: file) {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+        return false
+    }
+    
 }
 

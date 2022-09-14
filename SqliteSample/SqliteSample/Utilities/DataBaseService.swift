@@ -40,7 +40,7 @@ class DataBaseService {
     }
     
     // MARK: - select table
-    func selectTable(_ table : String, from: String, where : String, extra: String, recordBlock : @escaping ([String]) -> Void, successHandler : @escaping (Bool) -> Void) {
+    func selectTable(_ table : String, from: String, where : String, extra: String, recordBlock : @escaping ([String:String]) -> Void, successHandler : @escaping (Bool) -> Void) {
         
     }
     

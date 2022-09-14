@@ -23,7 +23,15 @@ class DataBaseManager {
         }
     }
     
-    func doParticipant(_ participant : [String], action: String, successHandler : @escaping (Bool) -> Void) {
+    func createFileDirectoryDatabase() {
+        
+    }
+    
+    func createNewTable(_ table : String) {
+        
+    }
+    
+    func doParticipant(_ participant : [String:String], action: String, successHandler : @escaping (Bool) -> Void) {
         
         if action == "add" {
             
@@ -34,7 +42,7 @@ class DataBaseManager {
         }
     }
     
-    func getParticipant(_ table: String, recordBlock : @escaping ([String]) -> Void) {
+    func getParticipant(_ recordBlock : @escaping ([[String:String]]) -> Void) {
         
     }
 }
