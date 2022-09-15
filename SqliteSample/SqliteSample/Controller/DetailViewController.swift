@@ -175,25 +175,44 @@ extension DetailViewController {
                 let data = [Model.name : nameT,
                             Model.age  : ageT,
                             Model.address : addressT]
-                                          
-                DataBaseManager.sharedInstance.doParticipant(data, action: "Add") { results in
-                    print("Update data %s", results ? "Successed" : "Failed")
-                }
-            } else {
-                let alertController = UIAlertController.init(title: "Warning", message: "Missing some infomation", preferredStyle: .alert)
-                let alert = UIAlertAction.init(title: "OK", style: .default) { action in
-//                    self.dismiss(animated: true)
-                }
-                alertController.addAction(alert)
                 
-                self.present(alertController, animated: true)
-                return
-            }
-            
-            if (!isModal) {
-                self.navigationController?.popViewController(animated: true)
+                if (!isModal) {
+                    let results = DataBaseManager.sharedInstance.doParticipant(data, action: Model.ADD)
+                    if results {
+                        self.navigationController?.popViewController(animated: true)
+                    } else {
+                        if let alertController = UIAlertController.alertActionWarning(message: "Error when set user info", completion: { action in
+                            if action != nil {
+                                //
+                            }
+                        }) {
+                            self.present(alertController, animated: true)
+                        }
+                    }
+                } else {
+                    let results = DataBaseManager.sharedInstance.doParticipant(data, action: Model.UPDATE)
+                    if results {
+                        self.dismiss(animated: true)
+                    } else {
+                        if let alertController = UIAlertController.alertActionWarning(message: "Error when set user info", completion: { action in
+                            if action != nil {
+                                //
+                            }
+                        }) {
+                            self.present(alertController, animated: true)
+                        }
+                    }
+                }
+                
             } else {
-                self.dismiss(animated: true)
+                if let alertController = UIAlertController.alertActionWarning(message: "Some infomation is empty", completion: { action in
+                    if action != nil {
+                        //
+                    }
+                }) {
+                    self.present(alertController, animated: true)
+                }
+                return
             }
             
         }

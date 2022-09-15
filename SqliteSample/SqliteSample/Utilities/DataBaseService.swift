@@ -10,6 +10,11 @@ import Foundation
 class DataBaseService {
     
     // MARK: - Alert table
+    func createTable(_ table : String, column: String, cuccessHandler : @escaping (Bool) -> Void ) {
+        
+    }
+    
+    // MARK: - Alert table
     
     func alertTable(_ table : String, addColumn: String, type: String, successHandler : @escaping (Bool) -> Void ) {
         
@@ -35,12 +40,12 @@ class DataBaseService {
     
     // MARK: - delete table
     
-    func deleteTable(_ table :  String, where : String, successHandler : @escaping (Bool) -> Void) {
+    func deleteTable(_ table :  String, where : [String], successHandler : @escaping (Bool) -> Void) {
         
     }
     
     // MARK: - select table
-    func selectTable(_ table : String, from: String, where : String, extra: String, recordBlock : @escaping ([String:String]) -> Void, successHandler : @escaping (Bool) -> Void) {
+    func selectTable(_ columns : [String], from: String, where : String, extra: String, recordBlock : @escaping ([[String]]) -> Void, successHandler : @escaping (Bool) -> Void) {
         
     }
     

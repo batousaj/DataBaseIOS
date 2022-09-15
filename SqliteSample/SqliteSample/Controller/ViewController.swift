@@ -23,10 +23,28 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         
         if !self.checkExistFileManager() { // file do not exist
-            DataBaseManager.sharedInstance.createNewTable("userinfo.sqlite")
+            DataBaseManager.sharedInstance.createFileDirectoryDatabase { error, successed in
+                if successed {
+                    print("ViewController:: Create file successed")
+                } else {
+                    fatalError("DataBaseManager:: \(error)")
+                }
+            }
+            
+            if self.createTableValue() {
+                print("ViewController:: Create new table successed")
+            } else {
+                fatalError("DataBaseManager:: New table create failed")
+            }
         } else {
             if !self.fecthData() {
-                fatalError("ViewController :: No have data on data base")
+                print("ViewController:: No have data on data base")
+                
+                if self.createTableValue() {
+                    print("ViewController:: Create new table successed")
+                } else {
+                    fatalError("DataBaseManager:: New table create failed")
+                }
             }
         }
     }
@@ -96,5 +114,15 @@ class ViewController: UIViewController {
         return false
     }
     
+    func createTableValue() -> Bool {
+        var column = [[String:String]]()
+        column.append(contentsOf:
+            [[Model.name     : "TEXT"],
+             [Model.age      : "TEXT"],
+             [Model.address  : "TEXT"]]
+        )
+        
+        return DataBaseManager.sharedInstance.createNewTable("userinfo.sqlite", value: column)
+    }
 }
 

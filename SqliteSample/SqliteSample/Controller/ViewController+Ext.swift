@@ -11,14 +11,12 @@ import UIKit
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return nameInfo.count
-        return 4
+        return nameInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListNameCell", for: indexPath) as! ViewCellCustom
-//        cell.setDataForCell(self.nameInfo[indexPath.row].name, age: self.nameInfo[indexPath.row].age)
-        cell.setDataForCell("Thien Vu", age: "23")
+        cell.setDataForCell(self.nameInfo[indexPath.row].name, age: self.nameInfo[indexPath.row].age)
         return cell
     }
     

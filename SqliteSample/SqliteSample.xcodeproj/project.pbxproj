@@ -26,6 +26,7 @@
 		B11C845528D0DD0F007FA2CD /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B11C844F28D0DD0F007FA2CD /* FMResultSet.m */; };
 		B11C845628D0DD0F007FA2CD /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = B11C845128D0DD0F007FA2CD /* FMDatabasePool.m */; };
 		B11C845828D0E56F007FA2CD /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11C845728D0E56F007FA2CD /* DataBaseManager.swift */; };
+		B1A1BBEE28D32C21009919A5 /* UIAlertController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1BBED28D32C21009919A5 /* UIAlertController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		B11C845028D0DD0F007FA2CD /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		B11C845128D0DD0F007FA2CD /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		B11C845728D0E56F007FA2CD /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
+		B1A1BBED28D32C21009919A5 /* UIAlertController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				B11C843E28D0D44A007FA2CD /* DataBaseService.swift */,
 				2EB5A6AD28CE1F680032BCF8 /* ViewModel.swift */,
 				B11C845728D0E56F007FA2CD /* DataBaseManager.swift */,
+				B1A1BBED28D32C21009919A5 /* UIAlertController+Ext.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				B11C845528D0DD0F007FA2CD /* FMResultSet.m in Sources */,
 				B11C845228D0DD0F007FA2CD /* FMDatabaseAdditions.m in Sources */,
 				2EB5A69828CE13BE0032BCF8 /* SceneDelegate.swift in Sources */,
+				B1A1BBEE28D32C21009919A5 /* UIAlertController+Ext.swift in Sources */,
 				B11C843F28D0D44A007FA2CD /* DataBaseService.swift in Sources */,
 				B11C845428D0DD0F007FA2CD /* FMDatabase.m in Sources */,
 				B11C843928D0A5FA007FA2CD /* DetailViewController.swift in Sources */,
