@@ -32,7 +32,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         
         self.nameInfo.forEach { info in
             if info.name == cell.name.text {
-                viewController.getDataFromTable(info)
+                viewController.getDataFromTable(info, id: indexPath.row)
             }
         }
         
@@ -44,7 +44,13 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         print("SqliteSample:: Add name list")
         let storyboard = UIStoryboard.init(name: "DetailView", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
+        viewController.getDataFromTable(nil, id: self.nameList.numberOfRows(inSection: 0))
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    @objc func OnBackAfterPresent() {
+        if self.fecthData() {
+            nameList.reloadData()
+        }
+    }
 }

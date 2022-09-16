@@ -11,6 +11,7 @@ class Model  {
     
     static let table = "USERINFO"
     
+    static let id    = "ID"
     static let name    = "NAME"
     static let age     = "AGE"
     static let address = "ADDRESS"
@@ -32,22 +33,20 @@ class Model  {
         var address = ""
         
         var infoUser = [Model.NameInfo]()
-        DataBaseManager.sharedInstance.getParticipant() { strings in
-//            for info in strings {
-//                for (key, value) in info {
-//                    if key == Model.name {
-//                        name = value
-//                    } else if key == Model.age {
-//                        age = value
-//                    } else if key == Model.address {
-//                        address = value
-//                    }
-//                }
-//
-//                infoUser.append(Model.NameInfo(name: name,
-//                                                age: age,
-//                                            address: address))
-//            }
+        DataBaseManager.sharedInstance.getParticipant() { dict in
+            for (key, value) in dict {
+                if key == Model.name {
+                    name = value
+                } else if key == Model.age {
+                    age = value
+                } else if key == Model.address {
+                    address = value
+                }
+            }
+            
+            infoUser.append(Model.NameInfo(name: name,
+                                           age: age,
+                                           address: address))
         }
         
         return infoUser

@@ -16,37 +16,39 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.registerNotification()
         createUIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if !self.checkExistFileManager() { // file do not exist
-            DataBaseManager.sharedInstance.createFileDirectoryDatabase { error, successed in
+        if !self.checkExistFileManager("userinfo.sqlite") { // file do not exist
+            DataBaseManager.sharedInstance.createFileDirectoryDatabase("userinfo.sqlite") { comment, successed in
                 if successed {
                     print("ViewController:: Create file successed")
                 } else {
-                    fatalError("DataBaseManager:: \(error)")
+                    fatalError("DataBaseManager:: \(comment)")
                 }
             }
             
             if self.createTableValue() {
-                print("ViewController:: Create new table successed")
+                print("ViewController:: Create TABLE \(Model.table) successed")
             } else {
-                fatalError("DataBaseManager:: New table create failed")
+                fatalError("DataBaseManager::  Create TABLE \(Model.table) failed")
             }
+            
         } else {
             if !self.fecthData() {
                 print("ViewController:: No have data on data base")
-                
-                if self.createTableValue() {
-                    print("ViewController:: Create new table successed")
-                } else {
-                    fatalError("DataBaseManager:: New table create failed")
-                }
+            } else {
+                nameList.reloadData()
             }
         }
+    }
+    
+    func registerNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(OnBackAfterPresent), name: Notification.Name("kWillAppearAfterPresent"), object: nil)
     }
 
     func createUIView() {
@@ -97,14 +99,15 @@ class ViewController: UIViewController {
         return false
     }
     
-    func checkExistFileManager() -> Bool {
+    func checkExistFileManager(_ name :  String) -> Bool {
         let search = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let path = search[0] as String
         let url = NSURL(fileURLWithPath: path)
-        if let component = url.appendingPathComponent("userinfo.sqlite") {
+        if let component = url.appendingPathComponent(name) {
             let file = component.path
             let fileManager = FileManager.default
             if fileManager.fileExists(atPath: file) {
+                DataBaseManager.sharedInstance.service.databasePath = component.path
                 return true
             } else {
                 return false
@@ -117,12 +120,13 @@ class ViewController: UIViewController {
     func createTableValue() -> Bool {
         var column = [[String:String]]()
         column.append(contentsOf:
-            [[Model.name     : "TEXT"],
-             [Model.age      : "TEXT"],
-             [Model.address  : "TEXT"]]
+            [[Model.id       : "INT PRIMARY KEY NOT NULL,"],
+             [Model.name     : "TEXT NOT NULL,"],
+             [Model.age      : "INT NOT NULL,"],
+             [Model.address  : "CHAR(50) NOT NULL"]]
         )
         
-        return DataBaseManager.sharedInstance.createNewTable("userinfo.sqlite", value: column)
+        return DataBaseManager.sharedInstance.createNewTable("\(Model.table)", value: column)
     }
 }
 

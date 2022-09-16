@@ -23,28 +23,24 @@ class DataBaseManager {
         }
     }
     
-    func createFileDirectoryDatabase(_ completionHandler : @escaping (String, Bool) -> Void) {
+    func createFileDirectoryDatabase(_ name: String, completionHandler : @escaping (String, Bool) -> Void) {
         let fileManager = FileManager.default
         let directory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let url = NSURL(fileURLWithPath: directory[0])
-        if let component = url.appendingPathComponent("userinfo.sqlite") {
+        if let component = url.appendingPathComponent(name) {
             if fileManager.fileExists(atPath: component.path) {
                 completionHandler("File was exist", false)
             } else {
-                do {
-                    try fileManager.createDirectory(at: component, withIntermediateDirectories: true)
-                    completionHandler("", true)
-                }
-                catch {
-                    completionHandler("Can not create fiel derectory", false)
-                }
+                fileManager.createFile(atPath: component.path, contents: nil)
+                DataBaseManager.sharedInstance.service.databasePath = component.path
+                completionHandler("", true)
             }
         }
     }
     
     func createNewTable(_ table : String, value : [[String:String]]) -> Bool {
         var complete = false
-        self.service.createTable(Model.table, column: "") { results in
+        self.service.createTable(Model.table, column: value) { results in
             if results {
                 print("Create Table \(Model.table) complete")
                 complete = true
@@ -53,39 +49,40 @@ class DataBaseManager {
         return complete
     }
     
-    func doParticipant(_ participant : [String:String], action: String) -> Bool {
+    func doParticipant(_ participant : [String:Any], action: String) -> Bool {
         var complete = false
+        var col = [String]()
+        var val = [Any]()
+        var condition = ""
         
         if participant.count > 2 {
             if action == Model.ADD {
-                for (key,value) in participant {
-                    self.service.insertTable(Model.table, column: key, value: [value]) { results in
-                        if results {
-                            print("Add value complete")
-                            complete = true
-                        }
+                col = participant.map({ $0.key })
+                val = participant.map({ $0.value})
+                self.service.insertTable(Model.table, column: col, value: val) { results in
+                    if results {
+                        print("Add value complete")
+                        complete = true
                     }
                 }
                 return complete
                 
             } else if action == Model.UPDATE {
-                for (key,value) in participant {
-                    self.service.updateTable(Model.table, value: [value], where: key, successHandler: {  results in
-                        if results {
-                            print("Update value complete")
-                            complete = true
-                        }
-                    })
-                }
+                condition = "\(Model.id) = \(String(describing: participant[Model.id]!))"
+                self.service.updateTable(Model.table, value: participant, where_: condition, successHandler: {  results in
+                    if results {
+                        print("Update value complete")
+                        complete = true
+                    }
+                })
                 return complete
                 
             } else if action == Model.DELETE {
-                for key in participant.keys {
-                    self.service.deleteTable(Model.table, where: [key]) { results in
-                        if results {
-                            print("delete value complete")
-                            complete = true
-                        }
+                condition = "\(Model.id) = \(String(describing: participant[Model.id]!))"
+                self.service.deleteTable(Model.table, where_: condition) { results in
+                    if results {
+                        print("delete value complete")
+                        complete = true
                     }
                 }
                 return complete
@@ -94,12 +91,16 @@ class DataBaseManager {
         return complete
     }
     
-    func getParticipant(_ recordBlock : @escaping ([[String]]) -> Void) {
-        self.service.selectTable([Model.name,Model.age,Model.address],
-                                 from: Model.table,
-                                 where: "",
-                                 extra: "") { dictionary in
-            recordBlock(dictionary)
+    func getParticipant(_ recordBlock : @escaping ([String:String]) -> Void) {
+        var dict = [String:String]()
+        self.service.selectTable(nil,
+                                 table: Model.table,
+                                 whereCondition: nil,
+                                 extra: nil) { dictionary in
+            for (key,value) in dictionary {
+                dict[key as! String] = "\(value)"
+            }
+            recordBlock(dict)
         } successHandler: { results in
             if results {
                 print("DataBaseManager:: get data complete ")

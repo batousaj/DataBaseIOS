@@ -24,6 +24,7 @@ class DetailViewController : UIViewController {
     let editting = UIButton()
     
     var nameInfo:Model.NameInfo!
+    var id = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +46,11 @@ class DetailViewController : UIViewController {
         super.viewWillAppear(animated)
     }
     
-    public func getDataFromTable(_ model : Model.NameInfo) {
-        self.nameInfo = model
+    public func getDataFromTable(_ model : Model.NameInfo?, id: Int) {
+        if model != nil {
+            self.nameInfo = model
+        }
+        self.id = id
     }
     
     func overview() {
@@ -75,7 +79,11 @@ class DetailViewController : UIViewController {
         self.editting.addTarget(self, action: #selector(OnClickEditting), for: .touchUpInside)
         self.changeNameEditting(state: state)
         self.editting.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        self.editting.setTitleColor(.tintColor, for: .normal)
+        if #available(iOS 15.0, *) {
+            self.editting.setTitleColor(.tintColor, for: .normal)
+        } else {
+            // Fallback on earlier versions
+        }
         self.editting.titleLabel?.textAlignment = .center
         
         let contraintsEdit = [
@@ -110,7 +118,7 @@ class DetailViewController : UIViewController {
         }
         
         if name != nil && age != nil && address != nil {
-            setEnableTextFieled(true)
+            setEnableTextFieled(false)
         }
 
         let contraintsName = [
@@ -172,9 +180,10 @@ extension DetailViewController {
         if self.editting.titleLabel?.text == "Save" {
                         
             if let nameT = self.name.text, let ageT = self.age.text, let addressT = self.address.text, nameT != "" && ageT != "" && addressT != "" {
-                let data = [Model.name : nameT,
-                            Model.age  : ageT,
-                            Model.address : addressT]
+                let data:[String : Any] = [ Model.id : self.id,
+                                            Model.name : nameT,
+                                            Model.age  : Int(ageT) ?? 0,
+                                            Model.address : addressT]
                 
                 if (!isModal) {
                     let results = DataBaseManager.sharedInstance.doParticipant(data, action: Model.ADD)
@@ -192,6 +201,7 @@ extension DetailViewController {
                 } else {
                     let results = DataBaseManager.sharedInstance.doParticipant(data, action: Model.UPDATE)
                     if results {
+                        NotificationCenter.default.post(name: Notification.Name("kWillAppearAfterPresent") , object: nil)
                         self.dismiss(animated: true)
                     } else {
                         if let alertController = UIAlertController.alertActionWarning(message: "Error when set user info", completion: { action in
