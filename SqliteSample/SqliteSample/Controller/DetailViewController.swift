@@ -101,6 +101,8 @@ class DetailViewController : UIViewController {
         self.name.backgroundColor = .systemGray6
         if name != nil {
             self.name.text = name
+        } else {
+            self.name.placeholder = "Name"
         }
         
         self.view.addSubview(self.age)
@@ -108,14 +110,20 @@ class DetailViewController : UIViewController {
         self.age.backgroundColor = .systemGray6
         if age != nil {
             self.age.text = age
+        } else {
+            self.age.placeholder = "Age"
         }
+
 
         self.view.addSubview(self.address)
         self.address.translatesAutoresizingMaskIntoConstraints = false
         self.address.backgroundColor = .systemGray6
         if address != nil {
             self.address.text = address
+        } else {
+            self.address.placeholder = "Address"
         }
+
         
         if name != nil && age != nil && address != nil {
             setEnableTextFieled(false)
