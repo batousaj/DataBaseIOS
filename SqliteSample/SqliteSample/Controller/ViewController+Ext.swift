@@ -24,6 +24,26 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         return 70
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let success = DataBaseManager.sharedInstance.deleteParticipant("\(self.nameInfo[indexPath.row].id)")
+            self.nameInfo.remove(at: indexPath.row)
+            if success {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        } else {
+            //
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        self.nameInfo.swapAt(sourceIndexPath.row, destinationIndexPath.row)
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("SqliteSample:: didSelectRowAt")
         let cell = tableView.cellForRow(at: indexPath) as! ViewCellCustom
@@ -44,13 +64,39 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         print("SqliteSample:: Add name list")
         let storyboard = UIStoryboard.init(name: "DetailView", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
-        viewController.getDataFromTable(nil, id: self.nameList.numberOfRows(inSection: 0))
+        if nameInfo.count > 0 {
+            var haveID = false
+            for i in 0..<self.nameInfo.last!.id {
+                if !identify.contains(i) {
+                    haveID = true
+                    viewController.getDataFromTable(nil, id: i)
+                    break;
+                }
+            }
+            if !haveID {
+                viewController.getDataFromTable(nil, id: self.nameInfo.last!.id  + 1)
+            }
+        }
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc func OnBackAfterPresent() {
-        if self.fecthData() {
-            nameList.reloadData()
+        if !self.fecthData() {
+            print("ViewController:: No have data on data base")
         }
     }
+    
+    @objc func OnTouchTable() {
+        NotificationCenter.default.post(name: NSNotification.Name("kWillTouchTableView"), object: true)
+    }
+    
+    @objc func OnEndTouchTable() {
+        NotificationCenter.default.post(name: NSNotification.Name("kWillTouchTableView"), object: false)
+    }
+    
+    @objc func OnTouchTableView(notification: Notification) {
+        let data = notification.object as! Bool
+        self.nameList.isEditing = data
+    }
+    
 }

@@ -7,11 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     let nameList = UITableView()
     
     var nameInfo = [Model.NameInfo]()
+    var identify = [Int]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,14 +42,14 @@ class ViewController: UIViewController {
         } else {
             if !self.fecthData() {
                 print("ViewController:: No have data on data base")
-            } else {
-                nameList.reloadData()
             }
         }
     }
     
     func registerNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(OnBackAfterPresent), name: Notification.Name("kWillAppearAfterPresent"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(OnTouchTableView(notification:)), name: Notification.Name("kWillTouchTableView"), object: nil)
+
     }
 
     func createUIView() {
@@ -78,6 +79,14 @@ class ViewController: UIViewController {
         nameList.dataSource = self
         nameList.register(ViewCellCustom.self, forCellReuseIdentifier: "ListNameCell")
         
+        let gesture = UILongPressGestureRecognizer.init(target: self, action: #selector(OnTouchTable))
+        gesture.minimumPressDuration = 1.0
+        gesture.delegate = self
+        nameList.addGestureRecognizer(gesture)
+        
+        let gesture1 = UITapGestureRecognizer.init(target: self, action: #selector(OnEndTouchTable))
+        view.addGestureRecognizer(gesture1)
+        
         let contraints = [
             self.nameList.topAnchor.constraint(equalTo: self.view.topAnchor , constant: 120),
             self.nameList.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
@@ -93,6 +102,10 @@ class ViewController: UIViewController {
         self.nameInfo = Model.fecthData()
         
         if self.nameInfo.count > 0 {
+            for i in 0..<self.nameInfo.count {
+                identify.append(self.nameInfo[i].id)
+            }
+            nameList.reloadData()
             return true
         }
         

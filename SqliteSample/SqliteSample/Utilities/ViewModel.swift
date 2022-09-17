@@ -21,13 +21,14 @@ class Model  {
     static let DELETE   = "Delete"
 
     struct NameInfo {
+        let id : Int
         let name : String
         let age : String
         let address : String
     }
     
     static func fecthData() -> [Model.NameInfo] {
-        
+        var id = 0
         var name = ""
         var age = ""
         var address = ""
@@ -35,16 +36,19 @@ class Model  {
         var infoUser = [Model.NameInfo]()
         DataBaseManager.sharedInstance.getParticipant() { dict in
             for (key, value) in dict {
-                if key == Model.name {
-                    name = value
+                if key == Model.id {
+                    id = value as! Int
+                } else if key == Model.name {
+                    name = value as! String
                 } else if key == Model.age {
-                    age = value
+                    age = "\(value as! Int)"
                 } else if key == Model.address {
-                    address = value
+                    address = value as! String
                 }
             }
             
-            infoUser.append(Model.NameInfo(name: name,
+            infoUser.append(Model.NameInfo(id : id,
+                                           name: name,
                                            age: age,
                                            address: address))
         }

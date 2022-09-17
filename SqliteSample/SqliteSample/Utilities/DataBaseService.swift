@@ -7,11 +7,13 @@
 
 import Foundation
 
-class DataBaseService {
+class DataBaseService : DataBaseServiceDelegate {
     
     var databasePath = ""
     
     var queue:FMDatabaseQueue!
+    
+    init() {}
     
     // MARK: - Alert table
     func createTable(_ table : String, column: [[String:String]], successHandler : @escaping (Bool) -> Void ) {
@@ -36,19 +38,39 @@ class DataBaseService {
     // MARK: - Alert table
     
     func alertTable(_ table : String, addColumn: String, type: String, successHandler : @escaping (Bool) -> Void ) {
+        var success = false
         
+        let statement = "ALERT TABLE \(table) ADD \(addColumn) \(type);"
+        
+        self.statement(statement) { results in
+            success = results
+        }
+        
+        successHandler(success)
     }
     
-    func alertTable(_ table : String, dropColumn: String, type: String, successHandler : @escaping (Bool) -> Void ) {
+    func alertTable(_ table : String, dropColumn: String, successHandler : @escaping (Bool) -> Void ) {
+        var success = false
         
+        let statement = "ALERT TABLE \(table) DROP COLUMN \(dropColumn);"
+        
+        self.statement(statement) { results in
+            success = results
+        }
+        
+        successHandler(success)
     }
     
-    func alertTable(_ table : String, alertColumn: String, type: String, successHandler : @escaping (Bool) -> Void ) {
+    func alertTable(_ table : String, renameColumn: String, column: String, successHandler : @escaping (Bool) -> Void ) {
+        var success = false
         
-    }
-    
-    func alertTable(_ table : String, renameColumn: String, type: String, successHandler : @escaping (Bool) -> Void ) {
+        let statement = "ALERT TABLE \(table) RENAME COLUMN \(column) TO \(renameColumn);"
         
+        self.statement(statement) { results in
+            success = results
+        }
+        
+        successHandler(success)
     }
     
     // MARK: - insert table
