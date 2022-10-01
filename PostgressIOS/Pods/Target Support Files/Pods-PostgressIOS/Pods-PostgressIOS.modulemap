@@ -1,0 +1,6 @@
+framework module Pods_PostgressIOS {
+  umbrella header "Pods-PostgressIOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

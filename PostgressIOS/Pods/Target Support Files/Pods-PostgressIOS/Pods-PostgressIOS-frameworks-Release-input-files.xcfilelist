@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-PostgressIOS/Pods-PostgressIOS-frameworks.sh
+${BUILT_PRODUCTS_DIR}/BlueSSLService/SSLService.framework
+${BUILT_PRODUCTS_DIR}/BlueSocket/Socket.framework
+${BUILT_PRODUCTS_DIR}/PostgresClientKit/PostgresClientKit.framework

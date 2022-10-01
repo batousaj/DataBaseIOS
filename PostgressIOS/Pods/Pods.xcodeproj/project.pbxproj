@@ -1,0 +1,1300 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C72B604F3AEC56F72F6634B5E8E21EB /* SocketProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938C5D8BCA604ADEF3179879C6BFDEA2 /* SocketProtocols.swift */; };
+		0EC11155CA1F4CCE3C305ECE1632E6C0 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F14D063B23E8BE4E00311B641A4B0 /* Crypto.swift */; };
+		12A099F7C702B4D2998026EBA6DB70E0 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E2426F5539F0EC8EBBF4DFBE128E4A /* Notice.swift */; };
+		171B17C1849BB150E89C73C463ABB17E /* ConnectionPoolMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C437F6CE6CE58988EA5C64A5E65AAC /* ConnectionPoolMetrics.swift */; };
+		17434BDD995E760EDDCEA5037C43A08F /* EmptyQueryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D55E262BC44F84A8A775D71AEEE0DB /* EmptyQueryResponse.swift */; };
+		17AD6A5C9E0CBA5BF8906F5BE4A00052 /* PostgresValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070038A9ACBB7D2B25F7460967B2AAE /* PostgresValue.swift */; };
+		17FB7FFFA27A23BB17311B1104BE3D41 /* AuthenticationSASLFinalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452CA8D2E6E75B444772B8783FB5415 /* AuthenticationSASLFinalResponse.swift */; };
+		2536ABE3D6A3C3242DC43918DA5D3CE3 /* PostgresClientKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FB454EEEC68E895BAD952FC2F04EAD16 /* PostgresClientKit-dummy.m */; };
+		2969F05248E0ED2E461846EF08AB6ED7 /* CloseCompleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D829B2B1281B67533BDE5328949C47BF /* CloseCompleteResponse.swift */; };
+		2D6FBD0F919ED1861B83399FD8DD9C58 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		2DC7381B31D14AC9362FC2F62AD9F3E3 /* SocketUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1760EBC33B6DFE19BC7C79C20971F /* SocketUtils.swift */; };
+		306B254341D212FDDB95D2906E6218AA /* BindCompleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066B332066B24E8A8AA9EB5D49861CE /* BindCompleteResponse.swift */; };
+		30CA68FB20A51C5741ED9F8DDA5F78A1 /* ConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA426B99E1BCF34A0EB8705987B861F /* ConnectionDelegate.swift */; };
+		3369A1C80970D807327017ACA31BD9B2 /* LogHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D949BDB17C6BF7EF7881A590A28A4D /* LogHandler.swift */; };
+		33B83F1892B092080963560F2AE7A1AC /* SyncRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE76141026CF90AB7799C2C7AFB740 /* SyncRequest.swift */; };
+		372D226EB81CF6F0FC09814B2A687FC6 /* NotificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A1620BCF5DD7A5117BD8D6C91E9326 /* NotificationResponse.swift */; };
+		38BB5A417752AE48331FE0993537404A /* Pods-PostgressIOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D066C2C0AF0BB39B7724E7077C855A /* Pods-PostgressIOS-dummy.m */; };
+		3B68F830F585884EA42344C46A727EFB /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63DD04CBBEFA5F47CC0839AC574ABD9 /* LogLevel.swift */; };
+		3E03BC7B65794A10FB4C316CD549F821 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		3F302B5B786CEA8E5566C954701AA92D /* FlushRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9D2389DA2A2A2E705E868A720EF21 /* FlushRequest.swift */; };
+		3F41D57B6CCA17D3BC06C27E5BF4F013 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3919C1A6D066CA7F89C16C368E1E2B44 /* Parameter.swift */; };
+		403B75FE2F25B14598848EB00F0441F6 /* ExecuteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B935C6EE90EDE268E9C2660CB2DC4 /* ExecuteRequest.swift */; };
+		432A97A25A7349414726D1349331C207 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDED7E9BDE5ADAA34D325C68325CAF3 /* Request.swift */; };
+		46925A5B04587A89334BA53FB5FBB581 /* ReadyForQueryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B80F8E0387F7458B447345636E4B566 /* ReadyForQueryResponse.swift */; };
+		4B677B7FA0117E5F10CC1ED6A292C383 /* SSLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766490CBADDD6F50C8B93B349C7105B /* SSLRequest.swift */; };
+		512E81132253ED7399CAA77017112652 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97F62670755C4FFAFC956FA968A183 /* Logger.swift */; };
+		52206112B9E67BC24C8D8C015DFD08C5 /* SASLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6538B0F10BD0CCD67E12BF3E80625620 /* SASLRequest.swift */; };
+		57132EFAD5AF3FBC9B40AA29C775A942 /* PostgresByteA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C309D3943DACA3843CB1CD7F56212A /* PostgresByteA.swift */; };
+		5C6A6A2EC7F3CB18C42F043ACB639B3E /* BlueSocket-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9641E93178CB817438030895D5FA1B65 /* BlueSocket-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5EB5125A7CE12E94C0C89CC4DADFFC7E /* PostgresTimestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7463653BEDE9033F5972013A882C1041 /* PostgresTimestamp.swift */; };
+		5F1292CB3902B5AC6A8ADAF426962885 /* BlueSocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E247AE21ED603BABF5E32AB74A40A4C4 /* BlueSocket-dummy.m */; };
+		5F6E6BA03D40BF6C9E1C977ED21BAC78 /* PostgresValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166B09BEC8059BB17DA818B97FF0475B /* PostgresValueConvertible.swift */; };
+		6021FC8FA775E1709EEB7CCDDF8BB6E3 /* Postgres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DBA81D304FA64420BE439040EAC3DC /* Postgres.swift */; };
+		60C3130C5CC66B57285E4525248E6732 /* AuthenticationOKResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A658AE2401101497CD88FEE6B8838A7 /* AuthenticationOKResponse.swift */; };
+		61098293363CFA330C0B6A8FFF1E7517 /* SASLPrep.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8BC487134C3799A2821FF4B137F9B8 /* SASLPrep.swift */; };
+		67163D8AAB2197812195A1C084D63900 /* StartupRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B896E530AB07BAE14697C2D65DE682F5 /* StartupRequest.swift */; };
+		67D790AE8D70FB2AFBF546B6656019E4 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2494B2CF380C0657C52F6E4D239DAE /* Response.swift */; };
+		6C624DB43904CBFC5634A6DF56093AD8 /* ConnectionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89787715A90FA9A41576670368A01503 /* ConnectionConfiguration.swift */; };
+		742940C8149242987377212EC6423A46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		78939DE17C54B4F86565CA4ACFC3E397 /* CommandCompleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94810E8E39412D183465517CE0C74A99 /* CommandCompleteResponse.swift */; };
+		791192D55BF15D8EABCC9C4D48369AD3 /* AuthenticationMD5PasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5445F6CA56D4D682FFFF6E61CB073A9F /* AuthenticationMD5PasswordResponse.swift */; };
+		7F591557C4CBA7F9C9560F35F93CFF0F /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254ADF56D8EAE796E9EE32CB498B4DCD /* AuthenticationResponse.swift */; };
+		85DA87A99D0F06116D962365118424D8 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4728AE2AE21C26562C65F9AA5C69D /* ErrorResponse.swift */; };
+		876E6764D8DDEA32EE7FC715DB87127B /* SASLInitialRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450D540D1712D2F5D613D399800A7F0A /* SASLInitialRequest.swift */; };
+		89CDEE7A5F4F8705E4EFB17D7EF1B7B2 /* BindRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FE4A4A0E6DB20C76C01FD74967C26A /* BindRequest.swift */; };
+		913591710CBD87A5E7569DA9D619478F /* ConnectionPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971938DC59396FB634675D13FB2906BE /* ConnectionPool.swift */; };
+		921C7111CCB0A84F34CEF3CF4E883490 /* PostgresTimeWithTimeZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A4C2EA5FB5EA2FFBA853DA19D3E6E1 /* PostgresTimeWithTimeZone.swift */; };
+		9392BBD2935808464A141888272794C5 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98335D3C2B93E8BE3E760D6FDCE4DBF /* Credential.swift */; };
+		96F976026F5F45FDAF455BEEF0E6C499 /* CloseStatementRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD211CDBEABC6FACE426CBACCC8AEC2 /* CloseStatementRequest.swift */; };
+		99DAD7763CF7DFC67F0B36BA0CEB9471 /* NoticeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74FD77C8E35ACCD3947A797C5A801EF /* NoticeResponse.swift */; };
+		9FA97414414F995323CB77C74D041BE5 /* RowDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3EDD321B635CADAB4B4F3EAD2511B /* RowDecoder.swift */; };
+		A17FDBBC1EFA127645800560774D9EA3 /* PostgresClientKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 655C462427F019453A4C5B6A8A5A45C2 /* PostgresClientKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3CE493A715C3475FB944A12BE00AB9F /* BackendKeyDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58085C4DEF1E8087CF4F976D5263FB55 /* BackendKeyDataResponse.swift */; };
+		A8A772378396C712EFA3E3EA9238A279 /* AuthenticationCleartextPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44863B80751FFCDCEEC99E4F80F92F6C /* AuthenticationCleartextPasswordResponse.swift */; };
+		AC3C94C5C351545F1A40DFDFDDDC8115 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540537B7C77DD35B27737604ECF04606 /* Socket.swift */; };
+		ADA1510D4067F03BC5D331BA7B6CBDF3 /* ParseCompleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F928D56A5188FADBD1ABADA7674A7E /* ParseCompleteResponse.swift */; };
+		B155321603159BF090BEED71AC0E755E /* PostgresDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A2D9188D6829FD2D654CC30E39FE68 /* PostgresDate.swift */; };
+		B33792603AB775792ED53EBFC80051B7 /* ParameterStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891800434C6546DA9A008546DFFC9F1E /* ParameterStatusResponse.swift */; };
+		B614D905A145DB24D5CBED6E43E83BAA /* ParseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5776203D1F1776E9C9A6C91BF42F3F /* ParseRequest.swift */; };
+		B6DBA684C01E7FEB88E38A4ED809FC0F /* SSLPointerTricks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D18BA6977BC5EAF0ACCCBCDF99D74 /* SSLPointerTricks.swift */; };
+		BF128C339DC0AC954A728BDE0FB8E7A1 /* PostgresTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78553AF77CF292EE07B29858D8E1490 /* PostgresTime.swift */; };
+		BFBE77C649BDF2FC5A09A4271C0829F4 /* AuthenticationSASLContinueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C1BEE429BCD2E72938B145A39B65E6 /* AuthenticationSASLContinueResponse.swift */; };
+		C2FE4ECCFA48A8CB96E2F3816B706F5B /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB092197232022625C0436AF6C8F0A69 /* Statement.swift */; };
+		C459BD3BB80A89703BBC483F9717596C /* DescribePortalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A2A0645B1950102E734036D94E9DDD /* DescribePortalRequest.swift */; };
+		C570138872CC69DB1DD033F39843631B /* NoDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C525ECABBB78E40732435E4D21AB36 /* NoDataResponse.swift */; };
+		C5A2C71DFDBD91A60122DA85BC273831 /* DataRowResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999CD8A02AC31CBCEB73A060A54A3455 /* DataRowResponse.swift */; };
+		C7ADB4899F421F7F700E2246C7992E9B /* ISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62876CCD296B5DF99BF5BDE4859617 /* ISO8601.swift */; };
+		C8BDC39B5C68F6EBCBA4CCB2D412DE62 /* RowDescriptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4CE977CF2CA54A2D0BA4E5275B78C3 /* RowDescriptionResponse.swift */; };
+		CAB85C8528E652F4670210BB794A6882 /* SCRAMSHA256Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73B72EECF8B1AECEF34184BA40C4B3C /* SCRAMSHA256Authenticator.swift */; };
+		CD7B3E462132A0DE270FD961B836F38A /* ClosePortalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE8C7A0B8C0993CCE566C3F03DF1F0 /* ClosePortalRequest.swift */; };
+		CF95B198B4B67C53B99ED5F7793EF611 /* Pods-PostgressIOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 03D6D34128068D5A49D43AF63B61F4F5 /* Pods-PostgressIOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D08DD8D52AF1EA24866FFDC190D40FD9 /* TerminateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7532D88901E00A5ED41F9E7C6ADE32F /* TerminateRequest.swift */; };
+		D6DE539DDB06D65651160746BEA05224 /* PasswordMessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539924E7D6B2C58CAE4F3C97E746FA9F /* PasswordMessageRequest.swift */; };
+		D787A6C419A2B8244EDB1B478CA1EC58 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F18D327A909B121B99A1B3304C2F31 /* Connection.swift */; };
+		D88B0307F347FB4FC8044283628E6390 /* LogRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EFB6DE3BD5B1DE8AC4913651A703CA /* LogRecord.swift */; };
+		DA1DBF4B87D617A680B7C3CEB6EDFD53 /* ColumnMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ED855524C922B64C8400A5F79BB4D9 /* ColumnMetadata.swift */; };
+		DA44084145CD67EFD8C24C4C7B43EEC3 /* SSLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D1989DFF1EDA41DB3EC34CBADE2197 /* SSLService.swift */; };
+		DF4FEBADE795B40560E136A64752B1F3 /* PostgresError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F13392BA5E0B7317B587FBA18293DE /* PostgresError.swift */; };
+		DF51B697DBD1CCD7BD426A6986B18401 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		E1586CC0E29998802BF3B2A0023C7D14 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B046341E40261F330932FBB47B699 /* Row.swift */; };
+		E1ACD84E86A1E4C2A04C4CA756F6B083 /* PostgresTimestampWithTimeZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9583A5B5C9AC329ACEDBF3AAC470C8A2 /* PostgresTimestampWithTimeZone.swift */; };
+		E64DA03BE8941B7A26A05AB7AB30BE89 /* BlueSSLService-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FA087A29A89B317996C2AA41A0EBE997 /* BlueSSLService-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA377D09D177D8E7AA7F221C992E53EB /* ConnectionPoolConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478F6A08B02C264EE4739980350DFC72 /* ConnectionPoolConfiguration.swift */; };
+		F533305E5CD39004D4DC5BF4488385E4 /* AuthenticationSASLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA02C7222DE31D3DA26195E4CB6736 /* AuthenticationSASLResponse.swift */; };
+		F716C70C2F244400055B576CF53E5B2B /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478E081FB6BDCD4051A7F923B2F9BA4 /* Cursor.swift */; };
+		FF0019B37C2CB7128517A6B92AAB7574 /* BlueSSLService-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8788D6C1DFF907E3BD4C3851CB15B8 /* BlueSSLService-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E27711CE81D2A6A27CAA2D7E6A93BEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 469552EB79715699476A4B13FA33A3F9;
+			remoteInfo = PostgresClientKit;
+		};
+		4BC26AA43861D26CD2057A4F9C74DB03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9717BE7FCECEF299173A5D71C18B19F5;
+			remoteInfo = BlueSocket;
+		};
+		6423026ACF68603770AAE7C8C41121AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCBA8B05012DBAAB467DAB2B19D7DFBA;
+			remoteInfo = BlueSSLService;
+		};
+		72FFFCB3C4B3AE535DF8D2837AB45706 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9717BE7FCECEF299173A5D71C18B19F5;
+			remoteInfo = BlueSocket;
+		};
+		73238A2B119565C1411CB3B3333370F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCBA8B05012DBAAB467DAB2B19D7DFBA;
+			remoteInfo = BlueSSLService;
+		};
+		AFB14C6224BE4646D48007956C5FB513 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9717BE7FCECEF299173A5D71C18B19F5;
+			remoteInfo = BlueSocket;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03A4C2EA5FB5EA2FFBA853DA19D3E6E1 /* PostgresTimeWithTimeZone.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostgresTimeWithTimeZone.swift; path = Sources/PostgresClientKit/PostgresTimeWithTimeZone.swift; sourceTree = "<group>"; };
+		03D6D34128068D5A49D43AF63B61F4F5 /* Pods-PostgressIOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PostgressIOS-umbrella.h"; sourceTree = "<group>"; };
+		0478E081FB6BDCD4051A7F923B2F9BA4 /* Cursor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cursor.swift; path = Sources/PostgresClientKit/Cursor.swift; sourceTree = "<group>"; };
+		05DBA81D304FA64420BE439040EAC3DC /* Postgres.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Postgres.swift; path = Sources/PostgresClientKit/Postgres.swift; sourceTree = "<group>"; };
+		100C5B71AD9081B6264DF9D44D599B59 /* PostgresClientKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PostgresClientKit.modulemap; sourceTree = "<group>"; };
+		10C437F6CE6CE58988EA5C64A5E65AAC /* ConnectionPoolMetrics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectionPoolMetrics.swift; path = Sources/PostgresClientKit/ConnectionPoolMetrics.swift; sourceTree = "<group>"; };
+		1200A18F93AF2572D5E81FC08F0BCCBE /* PostgresClientKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PostgresClientKit; path = PostgresClientKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1225FC9CC545B3A71A1182308FF3D506 /* BlueSocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BlueSocket-prefix.pch"; sourceTree = "<group>"; };
+		166B09BEC8059BB17DA818B97FF0475B /* PostgresValueConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostgresValueConvertible.swift; path = Sources/PostgresClientKit/PostgresValueConvertible.swift; sourceTree = "<group>"; };
+		16C525ECABBB78E40732435E4D21AB36 /* NoDataResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NoDataResponse.swift; path = Sources/PostgresClientKit/Response/NoDataResponse.swift; sourceTree = "<group>"; };
+		1AD3EDD321B635CADAB4B4F3EAD2511B /* RowDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RowDecoder.swift; path = Sources/PostgresClientKit/RowDecoder.swift; sourceTree = "<group>"; };
+		20CE9F1618AAE17F29AA935674AFA3EA /* Pods-PostgressIOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PostgressIOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		20DF760C5822B43DF1BA2AC50300A396 /* BlueSSLService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BlueSSLService.debug.xcconfig; sourceTree = "<group>"; };
+		21D1989DFF1EDA41DB3EC34CBADE2197 /* SSLService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLService.swift; path = Sources/SSLService/SSLService.swift; sourceTree = "<group>"; };
+		21F13392BA5E0B7317B587FBA18293DE /* PostgresError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostgresError.swift; path = Sources/PostgresClientKit/PostgresError.swift; sourceTree = "<group>"; };
+		21F928D56A5188FADBD1ABADA7674A7E /* ParseCompleteResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParseCompleteResponse.swift; path = Sources/PostgresClientKit/Response/ParseCompleteResponse.swift; sourceTree = "<group>"; };
+		23ED855524C922B64C8400A5F79BB4D9 /* ColumnMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColumnMetadata.swift; path = Sources/PostgresClientKit/ColumnMetadata.swift; sourceTree = "<group>"; };
+		251AEA20EC903E2AFC9548E290EFBD95 /* Pods-PostgressIOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PostgressIOS-Info.plist"; sourceTree = "<group>"; };
+		254ADF56D8EAE796E9EE32CB498B4DCD /* AuthenticationResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationResponse.swift; path = Sources/PostgresClientKit/Response/AuthenticationResponse.swift; sourceTree = "<group>"; };
+		27A1620BCF5DD7A5117BD8D6C91E9326 /* NotificationResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationResponse.swift; path = Sources/PostgresClientKit/Response/NotificationResponse.swift; sourceTree = "<group>"; };
+		28C309D3943DACA3843CB1CD7F56212A /* PostgresByteA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostgresByteA.swift; path = Sources/PostgresClientKit/PostgresByteA.swift; sourceTree = "<group>"; };
+		2D4CE977CF2CA54A2D0BA4E5275B78C3 /* RowDescriptionResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RowDescriptionResponse.swift; path = Sources/PostgresClientKit/Response/RowDescriptionResponse.swift; sourceTree = "<group>"; };
+		2EAA4A7F572E0FFFDA0F24140040D388 /* BlueSocket */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BlueSocket; path = Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		310D2C5E2822A62828E7C113514F5D6F /* Pods-PostgressIOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-PostgressIOS"; path = Pods_PostgressIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3343D4744D64F3D0194773329EBE4867 /* BlueSSLService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BlueSSLService.release.xcconfig; sourceTree = "<group>"; };
+		34D066C2C0AF0BB39B7724E7077C855A /* Pods-PostgressIOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PostgressIOS-dummy.m"; sourceTree = "<group>"; };
+		370B935C6EE90EDE268E9C2660CB2DC4 /* ExecuteRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExecuteRequest.swift; path = Sources/PostgresClientKit/Request/ExecuteRequest.swift; sourceTree = "<group>"; };
+		3919C1A6D066CA7F89C16C368E1E2B44 /* Parameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parameter.swift; path = Sources/PostgresClientKit/Parameter.swift; sourceTree = "<group>"; };
+		3AF2905752BF49D41737AEA807DAC101 /* PostgresClientKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PostgresClientKit-prefix.pch"; sourceTree = "<group>"; };
+		43A2A0645B1950102E734036D94E9DDD /* DescribePortalRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DescribePortalRequest.swift; path = Sources/PostgresClientKit/Request/DescribePortalRequest.swift; sourceTree = "<group>"; };
+		44863B80751FFCDCEEC99E4F80F92F6C /* AuthenticationCleartextPasswordResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationCleartextPasswordResponse.swift; path = Sources/PostgresClientKit/Response/AuthenticationCleartextPasswordResponse.swift; sourceTree = "<group>"; };
+		450D540D1712D2F5D613D399800A7F0A /* SASLInitialRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SASLInitialRequest.swift; path = Sources/PostgresClientKit/Request/SASLInitialRequest.swift; sourceTree = "<group>"; };
+		46E08FCE8CEC5FDDF1DB55E27591D717 /* BlueSocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BlueSocket.modulemap; sourceTree = "<group>"; };
+		478F6A08B02C264EE4739980350DFC72 /* ConnectionPoolConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectionPoolConfiguration.swift; path = Sources/PostgresClientKit/ConnectionPoolConfiguration.swift; sourceTree = "<group>"; };
+		4B80F8E0387F7458B447345636E4B566 /* ReadyForQueryResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReadyForQueryResponse.swift; path = Sources/PostgresClientKit/Response/ReadyForQueryResponse.swift; sourceTree = "<group>"; };
+		539924E7D6B2C58CAE4F3C97E746FA9F /* PasswordMessageRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PasswordMessageRequest.swift; path = Sources/PostgresClientKit/Request/PasswordMessageRequest.swift; sourceTree = "<group>"; };
+		540537B7C77DD35B27737604ECF04606 /* Socket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Socket.swift; path = Sources/Socket/Socket.swift; sourceTree = "<group>"; };
+		5445F6CA56D4D682FFFF6E61CB073A9F /* AuthenticationMD5PasswordResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationMD5PasswordResponse.swift; path = Sources/PostgresClientKit/Response/AuthenticationMD5PasswordResponse.swift; sourceTree = "<group>"; };
+		58085C4DEF1E8087CF4F976D5263FB55 /* BackendKeyDataResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BackendKeyDataResponse.swift; path = Sources/PostgresClientKit/Response/BackendKeyDataResponse.swift; sourceTree = "<group>"; };
+		5826CAD4221661E8F2F01349CBE4C838 /* Pods-PostgressIOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PostgressIOS-frameworks.sh"; sourceTree = "<group>"; };
+		59DA02C7222DE31D3DA26195E4CB6736 /* AuthenticationSASLResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationSASLResponse.swift; path = Sources/PostgresClientKit/Response/AuthenticationSASLResponse.swift; sourceTree = "<group>"; };
+		5A658AE2401101497CD88FEE6B8838A7 /* AuthenticationOKResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationOKResponse.swift; path = Sources/PostgresClientKit/Response/AuthenticationOKResponse.swift; sourceTree = "<group>"; };
+		5B370EBE9A63A6F40072829984987FB2 /* Pods-PostgressIOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PostgressIOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		5C70E382A7D4076734F710E31AF77434 /* BlueSocket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BlueSocket.release.xcconfig; sourceTree = "<group>"; };
+		63CE8C7A0B8C0993CCE566C3F03DF1F0 /* ClosePortalRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClosePortalRequest.swift; path = Sources/PostgresClientKit/Request/ClosePortalRequest.swift; sourceTree = "<group>"; };
+		6538B0F10BD0CCD67E12BF3E80625620 /* SASLRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SASLRequest.swift; path = Sources/PostgresClientKit/Request/SASLRequest.swift; sourceTree = "<group>"; };
+		655C462427F019453A4C5B6A8A5A45C2 /* PostgresClientKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PostgresClientKit-umbrella.h"; sourceTree = "<group>"; };
+		69BFA9B95C57F6D8C696C5147A9CA6B8 /* PostgresClientKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PostgresClientKit-Info.plist"; sourceTree = "<group>"; };
+		6EA1760EBC33B6DFE19BC7C79C20971F /* SocketUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketUtils.swift; path = Sources/Socket/SocketUtils.swift; sourceTree = "<group>"; };
+		6FA40412BCD5082E41A06FF67B66E5C8 /* PostgresClientKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PostgresClientKit.release.xcconfig; sourceTree = "<group>"; };
+		6FDED7E9BDE5ADAA34D325C68325CAF3 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Sources/PostgresClientKit/Request/Request.swift; sourceTree = "<group>"; };
+		7066B332066B24E8A8AA9EB5D49861CE /* BindCompleteResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BindCompleteResponse.swift; path = Sources/PostgresClientKit/Response/BindCompleteResponse.swift; sourceTree = "<group>"; };
+		721F14D063B23E8BE4E00311B641A4B0 /* Crypto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Crypto.swift; path = Sources/PostgresClientKit/Crypto.swift; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		741837CD54968895378558EE786AAB09 /* BlueSSLService-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BlueSSLService-prefix.pch"; sourceTree = "<group>"; };
+		7463653BEDE9033F5972013A882C1041 /* PostgresTimestamp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostgresTimestamp.swift; path = Sources/PostgresClientKit/PostgresTimestamp.swift; sourceTree = "<group>"; };
+		75CE76141026CF90AB7799C2C7AFB740 /* SyncRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SyncRequest.swift; path = Sources/PostgresClientKit/Request/SyncRequest.swift; sourceTree = "<group>"; };
+		76FE4A4A0E6DB20C76C01FD74967C26A /* BindRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BindRequest.swift; path = Sources/PostgresClientKit/Request/BindRequest.swift; sourceTree = "<group>"; };
+		7A7A786732799E72CA63678960983E1F /* BlueSSLService.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BlueSSLService.modulemap; sourceTree = "<group>"; };
+		7B62876CCD296B5DF99BF5BDE4859617 /* ISO8601.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO8601.swift; path = Sources/PostgresClientKit/ISO8601.swift; sourceTree = "<group>"; };
+		7BD211CDBEABC6FACE426CBACCC8AEC2 /* CloseStatementRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloseStatementRequest.swift; path = Sources/PostgresClientKit/Request/CloseStatementRequest.swift; sourceTree = "<group>"; };
+		8086AE3B8DD225C796030C0A609CF303 /* BlueSocket-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BlueSocket-Info.plist"; sourceTree = "<group>"; };
+		8452CA8D2E6E75B444772B8783FB5415 /* AuthenticationSASLFinalResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationSASLFinalResponse.swift; path = Sources/PostgresClientKit/Response/AuthenticationSASLFinalResponse.swift; sourceTree = "<group>"; };
+		84C4728AE2AE21C26562C65F9AA5C69D /* ErrorResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ErrorResponse.swift; path = Sources/PostgresClientKit/Response/ErrorResponse.swift; sourceTree = "<group>"; };
+		85E0C895BE0C0B4338F1ED09E13B77A0 /* BlueSSLService */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BlueSSLService; path = SSLService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8766490CBADDD6F50C8B93B349C7105B /* SSLRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLRequest.swift; path = Sources/PostgresClientKit/Request/SSLRequest.swift; sourceTree = "<group>"; };
+		891800434C6546DA9A008546DFFC9F1E /* ParameterStatusResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterStatusResponse.swift; path = Sources/PostgresClientKit/Response/ParameterStatusResponse.swift; sourceTree = "<group>"; };
+		89787715A90FA9A41576670368A01503 /* ConnectionConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectionConfiguration.swift; path = Sources/PostgresClientKit/ConnectionConfiguration.swift; sourceTree = "<group>"; };
+		91E2D24DA148604E41EA0F3916370B29 /* BlueSocket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BlueSocket.debug.xcconfig; sourceTree = "<group>"; };
+		92C1BEE429BCD2E72938B145A39B65E6 /* AuthenticationSASLContinueResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationSASLContinueResponse.swift; path = Sources/PostgresClientKit/Response/AuthenticationSASLContinueResponse.swift; sourceTree = "<group>"; };
+		938C5D8BCA604ADEF3179879C6BFDEA2 /* SocketProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketProtocols.swift; path = Sources/Socket/SocketProtocols.swift; sourceTree = "<group>"; };
+		94810E8E39412D183465517CE0C74A99 /* CommandCompleteResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CommandCompleteResponse.swift; path = Sources/PostgresClientKit/Response/CommandCompleteResponse.swift; sourceTree = "<group>"; };
+		9583A5B5C9AC329ACEDBF3AAC470C8A2 /* PostgresTimestampWithTimeZone.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostgresTimestampWithTimeZone.swift; path = Sources/PostgresClientKit/PostgresTimestampWithTimeZone.swift; sourceTree = "<group>"; };
+		9641E93178CB817438030895D5FA1B65 /* BlueSocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BlueSocket-umbrella.h"; sourceTree = "<group>"; };
+		971938DC59396FB634675D13FB2906BE /* ConnectionPool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectionPool.swift; path = Sources/PostgresClientKit/ConnectionPool.swift; sourceTree = "<group>"; };
+		999CD8A02AC31CBCEB73A060A54A3455 /* DataRowResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataRowResponse.swift; path = Sources/PostgresClientKit/Response/DataRowResponse.swift; sourceTree = "<group>"; };
+		9B2494B2CF380C0657C52F6E4D239DAE /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Sources/PostgresClientKit/Response/Response.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A6A9D2389DA2A2A2E705E868A720EF21 /* FlushRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlushRequest.swift; path = Sources/PostgresClientKit/Request/FlushRequest.swift; sourceTree = "<group>"; };
+		A73B72EECF8B1AECEF34184BA40C4B3C /* SCRAMSHA256Authenticator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCRAMSHA256Authenticator.swift; path = Sources/PostgresClientKit/SCRAMSHA256Authenticator.swift; sourceTree = "<group>"; };
+		A7E2426F5539F0EC8EBBF4DFBE128E4A /* Notice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notice.swift; path = Sources/PostgresClientKit/Notice.swift; sourceTree = "<group>"; };
+		AC97F62670755C4FFAFC956FA968A183 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Sources/PostgresClientKit/Logging/Logger.swift; sourceTree = "<group>"; };
+		B78553AF77CF292EE07B29858D8E1490 /* PostgresTime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostgresTime.swift; path = Sources/PostgresClientKit/PostgresTime.swift; sourceTree = "<group>"; };
+		B896E530AB07BAE14697C2D65DE682F5 /* StartupRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StartupRequest.swift; path = Sources/PostgresClientKit/Request/StartupRequest.swift; sourceTree = "<group>"; };
+		BA5776203D1F1776E9C9A6C91BF42F3F /* ParseRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParseRequest.swift; path = Sources/PostgresClientKit/Request/ParseRequest.swift; sourceTree = "<group>"; };
+		BB092197232022625C0436AF6C8F0A69 /* Statement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Statement.swift; path = Sources/PostgresClientKit/Statement.swift; sourceTree = "<group>"; };
+		BFA426B99E1BCF34A0EB8705987B861F /* ConnectionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectionDelegate.swift; path = Sources/PostgresClientKit/ConnectionDelegate.swift; sourceTree = "<group>"; };
+		C4189388ECC812D52F332DD8F58EC950 /* Pods-PostgressIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PostgressIOS.release.xcconfig"; sourceTree = "<group>"; };
+		C4743BBE972F3B90D2E1315E25F7EB29 /* BlueSSLService-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BlueSSLService-Info.plist"; sourceTree = "<group>"; };
+		D829B2B1281B67533BDE5328949C47BF /* CloseCompleteResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloseCompleteResponse.swift; path = Sources/PostgresClientKit/Response/CloseCompleteResponse.swift; sourceTree = "<group>"; };
+		D8D55E262BC44F84A8A775D71AEEE0DB /* EmptyQueryResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmptyQueryResponse.swift; path = Sources/PostgresClientKit/Response/EmptyQueryResponse.swift; sourceTree = "<group>"; };
+		D98335D3C2B93E8BE3E760D6FDCE4DBF /* Credential.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Credential.swift; path = Sources/PostgresClientKit/Credential.swift; sourceTree = "<group>"; };
+		DAF244D07EC1EBF6D04D959CEF0CB960 /* Pods-PostgressIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PostgressIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		DF4B046341E40261F330932FBB47B699 /* Row.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Row.swift; path = Sources/PostgresClientKit/Row.swift; sourceTree = "<group>"; };
+		E070038A9ACBB7D2B25F7460967B2AAE /* PostgresValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostgresValue.swift; path = Sources/PostgresClientKit/PostgresValue.swift; sourceTree = "<group>"; };
+		E0D949BDB17C6BF7EF7881A590A28A4D /* LogHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogHandler.swift; path = Sources/PostgresClientKit/Logging/LogHandler.swift; sourceTree = "<group>"; };
+		E247AE21ED603BABF5E32AB74A40A4C4 /* BlueSocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BlueSocket-dummy.m"; sourceTree = "<group>"; };
+		E3BB0A590CBE8DE0555DAED1409679EA /* Pods-PostgressIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PostgressIOS.modulemap"; sourceTree = "<group>"; };
+		E47D18BA6977BC5EAF0ACCCBCDF99D74 /* SSLPointerTricks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLPointerTricks.swift; path = Sources/SSLService/SSLPointerTricks.swift; sourceTree = "<group>"; };
+		E5A2D9188D6829FD2D654CC30E39FE68 /* PostgresDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostgresDate.swift; path = Sources/PostgresClientKit/PostgresDate.swift; sourceTree = "<group>"; };
+		EA8788D6C1DFF907E3BD4C3851CB15B8 /* BlueSSLService-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BlueSSLService-dummy.m"; sourceTree = "<group>"; };
+		EF8BC487134C3799A2821FF4B137F9B8 /* SASLPrep.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SASLPrep.swift; path = Sources/PostgresClientKit/SASLPrep.swift; sourceTree = "<group>"; };
+		F63DD04CBBEFA5F47CC0839AC574ABD9 /* LogLevel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogLevel.swift; path = Sources/PostgresClientKit/Logging/LogLevel.swift; sourceTree = "<group>"; };
+		F74FD77C8E35ACCD3947A797C5A801EF /* NoticeResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NoticeResponse.swift; path = Sources/PostgresClientKit/Response/NoticeResponse.swift; sourceTree = "<group>"; };
+		F7532D88901E00A5ED41F9E7C6ADE32F /* TerminateRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TerminateRequest.swift; path = Sources/PostgresClientKit/Request/TerminateRequest.swift; sourceTree = "<group>"; };
+		F8F18D327A909B121B99A1B3304C2F31 /* Connection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Connection.swift; path = Sources/PostgresClientKit/Connection.swift; sourceTree = "<group>"; };
+		F9EFB6DE3BD5B1DE8AC4913651A703CA /* LogRecord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogRecord.swift; path = Sources/PostgresClientKit/Logging/LogRecord.swift; sourceTree = "<group>"; };
+		FA087A29A89B317996C2AA41A0EBE997 /* BlueSSLService-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BlueSSLService-umbrella.h"; sourceTree = "<group>"; };
+		FB454EEEC68E895BAD952FC2F04EAD16 /* PostgresClientKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PostgresClientKit-dummy.m"; sourceTree = "<group>"; };
+		FF0AF8BA443D43E99C604A6C196619C2 /* PostgresClientKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PostgresClientKit.debug.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1BB30FEC88A81111D42C4AE407982CF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				742940C8149242987377212EC6423A46 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52A7ACB31ED72B6FFC89C7D7FD9C7A52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D6FBD0F919ED1861B83399FD8DD9C58 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C3D8D19DA8820FCEEFF8DF1B1852D3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF51B697DBD1CCD7BD426A6986B18401 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E650C477EF1F47F440A1682AB54E0E2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E03BC7B65794A10FB4C316CD549F821 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03EB70CDFA4850193FBC704F2D06322F /* PostgresClientKit */ = {
+			isa = PBXGroup;
+			children = (
+				44863B80751FFCDCEEC99E4F80F92F6C /* AuthenticationCleartextPasswordResponse.swift */,
+				5445F6CA56D4D682FFFF6E61CB073A9F /* AuthenticationMD5PasswordResponse.swift */,
+				5A658AE2401101497CD88FEE6B8838A7 /* AuthenticationOKResponse.swift */,
+				254ADF56D8EAE796E9EE32CB498B4DCD /* AuthenticationResponse.swift */,
+				92C1BEE429BCD2E72938B145A39B65E6 /* AuthenticationSASLContinueResponse.swift */,
+				8452CA8D2E6E75B444772B8783FB5415 /* AuthenticationSASLFinalResponse.swift */,
+				59DA02C7222DE31D3DA26195E4CB6736 /* AuthenticationSASLResponse.swift */,
+				58085C4DEF1E8087CF4F976D5263FB55 /* BackendKeyDataResponse.swift */,
+				7066B332066B24E8A8AA9EB5D49861CE /* BindCompleteResponse.swift */,
+				76FE4A4A0E6DB20C76C01FD74967C26A /* BindRequest.swift */,
+				D829B2B1281B67533BDE5328949C47BF /* CloseCompleteResponse.swift */,
+				63CE8C7A0B8C0993CCE566C3F03DF1F0 /* ClosePortalRequest.swift */,
+				7BD211CDBEABC6FACE426CBACCC8AEC2 /* CloseStatementRequest.swift */,
+				23ED855524C922B64C8400A5F79BB4D9 /* ColumnMetadata.swift */,
+				94810E8E39412D183465517CE0C74A99 /* CommandCompleteResponse.swift */,
+				F8F18D327A909B121B99A1B3304C2F31 /* Connection.swift */,
+				89787715A90FA9A41576670368A01503 /* ConnectionConfiguration.swift */,
+				BFA426B99E1BCF34A0EB8705987B861F /* ConnectionDelegate.swift */,
+				971938DC59396FB634675D13FB2906BE /* ConnectionPool.swift */,
+				478F6A08B02C264EE4739980350DFC72 /* ConnectionPoolConfiguration.swift */,
+				10C437F6CE6CE58988EA5C64A5E65AAC /* ConnectionPoolMetrics.swift */,
+				D98335D3C2B93E8BE3E760D6FDCE4DBF /* Credential.swift */,
+				721F14D063B23E8BE4E00311B641A4B0 /* Crypto.swift */,
+				0478E081FB6BDCD4051A7F923B2F9BA4 /* Cursor.swift */,
+				999CD8A02AC31CBCEB73A060A54A3455 /* DataRowResponse.swift */,
+				43A2A0645B1950102E734036D94E9DDD /* DescribePortalRequest.swift */,
+				D8D55E262BC44F84A8A775D71AEEE0DB /* EmptyQueryResponse.swift */,
+				84C4728AE2AE21C26562C65F9AA5C69D /* ErrorResponse.swift */,
+				370B935C6EE90EDE268E9C2660CB2DC4 /* ExecuteRequest.swift */,
+				A6A9D2389DA2A2A2E705E868A720EF21 /* FlushRequest.swift */,
+				7B62876CCD296B5DF99BF5BDE4859617 /* ISO8601.swift */,
+				AC97F62670755C4FFAFC956FA968A183 /* Logger.swift */,
+				E0D949BDB17C6BF7EF7881A590A28A4D /* LogHandler.swift */,
+				F63DD04CBBEFA5F47CC0839AC574ABD9 /* LogLevel.swift */,
+				F9EFB6DE3BD5B1DE8AC4913651A703CA /* LogRecord.swift */,
+				16C525ECABBB78E40732435E4D21AB36 /* NoDataResponse.swift */,
+				A7E2426F5539F0EC8EBBF4DFBE128E4A /* Notice.swift */,
+				F74FD77C8E35ACCD3947A797C5A801EF /* NoticeResponse.swift */,
+				27A1620BCF5DD7A5117BD8D6C91E9326 /* NotificationResponse.swift */,
+				3919C1A6D066CA7F89C16C368E1E2B44 /* Parameter.swift */,
+				891800434C6546DA9A008546DFFC9F1E /* ParameterStatusResponse.swift */,
+				21F928D56A5188FADBD1ABADA7674A7E /* ParseCompleteResponse.swift */,
+				BA5776203D1F1776E9C9A6C91BF42F3F /* ParseRequest.swift */,
+				539924E7D6B2C58CAE4F3C97E746FA9F /* PasswordMessageRequest.swift */,
+				05DBA81D304FA64420BE439040EAC3DC /* Postgres.swift */,
+				28C309D3943DACA3843CB1CD7F56212A /* PostgresByteA.swift */,
+				E5A2D9188D6829FD2D654CC30E39FE68 /* PostgresDate.swift */,
+				21F13392BA5E0B7317B587FBA18293DE /* PostgresError.swift */,
+				B78553AF77CF292EE07B29858D8E1490 /* PostgresTime.swift */,
+				7463653BEDE9033F5972013A882C1041 /* PostgresTimestamp.swift */,
+				9583A5B5C9AC329ACEDBF3AAC470C8A2 /* PostgresTimestampWithTimeZone.swift */,
+				03A4C2EA5FB5EA2FFBA853DA19D3E6E1 /* PostgresTimeWithTimeZone.swift */,
+				E070038A9ACBB7D2B25F7460967B2AAE /* PostgresValue.swift */,
+				166B09BEC8059BB17DA818B97FF0475B /* PostgresValueConvertible.swift */,
+				4B80F8E0387F7458B447345636E4B566 /* ReadyForQueryResponse.swift */,
+				6FDED7E9BDE5ADAA34D325C68325CAF3 /* Request.swift */,
+				9B2494B2CF380C0657C52F6E4D239DAE /* Response.swift */,
+				DF4B046341E40261F330932FBB47B699 /* Row.swift */,
+				1AD3EDD321B635CADAB4B4F3EAD2511B /* RowDecoder.swift */,
+				2D4CE977CF2CA54A2D0BA4E5275B78C3 /* RowDescriptionResponse.swift */,
+				450D540D1712D2F5D613D399800A7F0A /* SASLInitialRequest.swift */,
+				EF8BC487134C3799A2821FF4B137F9B8 /* SASLPrep.swift */,
+				6538B0F10BD0CCD67E12BF3E80625620 /* SASLRequest.swift */,
+				A73B72EECF8B1AECEF34184BA40C4B3C /* SCRAMSHA256Authenticator.swift */,
+				8766490CBADDD6F50C8B93B349C7105B /* SSLRequest.swift */,
+				B896E530AB07BAE14697C2D65DE682F5 /* StartupRequest.swift */,
+				BB092197232022625C0436AF6C8F0A69 /* Statement.swift */,
+				75CE76141026CF90AB7799C2C7AFB740 /* SyncRequest.swift */,
+				F7532D88901E00A5ED41F9E7C6ADE32F /* TerminateRequest.swift */,
+				3FDE942D9957093AA2B9E01C316D7E02 /* Support Files */,
+			);
+			name = PostgresClientKit;
+			path = PostgresClientKit;
+			sourceTree = "<group>";
+		};
+		0893B7F4616F04F1C441F2E3A8D8F9C2 /* BlueSocket */ = {
+			isa = PBXGroup;
+			children = (
+				540537B7C77DD35B27737604ECF04606 /* Socket.swift */,
+				938C5D8BCA604ADEF3179879C6BFDEA2 /* SocketProtocols.swift */,
+				6EA1760EBC33B6DFE19BC7C79C20971F /* SocketUtils.swift */,
+				7E374EB078EF051C54A06FC793B92D5E /* Support Files */,
+			);
+			name = BlueSocket;
+			path = BlueSocket;
+			sourceTree = "<group>";
+		};
+		3FDE942D9957093AA2B9E01C316D7E02 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				100C5B71AD9081B6264DF9D44D599B59 /* PostgresClientKit.modulemap */,
+				FB454EEEC68E895BAD952FC2F04EAD16 /* PostgresClientKit-dummy.m */,
+				69BFA9B95C57F6D8C696C5147A9CA6B8 /* PostgresClientKit-Info.plist */,
+				3AF2905752BF49D41737AEA807DAC101 /* PostgresClientKit-prefix.pch */,
+				655C462427F019453A4C5B6A8A5A45C2 /* PostgresClientKit-umbrella.h */,
+				FF0AF8BA443D43E99C604A6C196619C2 /* PostgresClientKit.debug.xcconfig */,
+				6FA40412BCD5082E41A06FF67B66E5C8 /* PostgresClientKit.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PostgresClientKit";
+			sourceTree = "<group>";
+		};
+		438F07F4A29474A8391CE5E893496717 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				67E4C3D81511C15661205C4B08BF5239 /* Pods-PostgressIOS */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		67E4C3D81511C15661205C4B08BF5239 /* Pods-PostgressIOS */ = {
+			isa = PBXGroup;
+			children = (
+				E3BB0A590CBE8DE0555DAED1409679EA /* Pods-PostgressIOS.modulemap */,
+				20CE9F1618AAE17F29AA935674AFA3EA /* Pods-PostgressIOS-acknowledgements.markdown */,
+				5B370EBE9A63A6F40072829984987FB2 /* Pods-PostgressIOS-acknowledgements.plist */,
+				34D066C2C0AF0BB39B7724E7077C855A /* Pods-PostgressIOS-dummy.m */,
+				5826CAD4221661E8F2F01349CBE4C838 /* Pods-PostgressIOS-frameworks.sh */,
+				251AEA20EC903E2AFC9548E290EFBD95 /* Pods-PostgressIOS-Info.plist */,
+				03D6D34128068D5A49D43AF63B61F4F5 /* Pods-PostgressIOS-umbrella.h */,
+				DAF244D07EC1EBF6D04D959CEF0CB960 /* Pods-PostgressIOS.debug.xcconfig */,
+				C4189388ECC812D52F332DD8F58EC950 /* Pods-PostgressIOS.release.xcconfig */,
+			);
+			name = "Pods-PostgressIOS";
+			path = "Target Support Files/Pods-PostgressIOS";
+			sourceTree = "<group>";
+		};
+		7E28BECBC01796544A78F22E70A33B3A /* BlueSSLService */ = {
+			isa = PBXGroup;
+			children = (
+				E47D18BA6977BC5EAF0ACCCBCDF99D74 /* SSLPointerTricks.swift */,
+				21D1989DFF1EDA41DB3EC34CBADE2197 /* SSLService.swift */,
+				F55D5CCB8006BAB01D538D06D3FA45D9 /* Support Files */,
+			);
+			name = BlueSSLService;
+			path = BlueSSLService;
+			sourceTree = "<group>";
+		};
+		7E374EB078EF051C54A06FC793B92D5E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				46E08FCE8CEC5FDDF1DB55E27591D717 /* BlueSocket.modulemap */,
+				E247AE21ED603BABF5E32AB74A40A4C4 /* BlueSocket-dummy.m */,
+				8086AE3B8DD225C796030C0A609CF303 /* BlueSocket-Info.plist */,
+				1225FC9CC545B3A71A1182308FF3D506 /* BlueSocket-prefix.pch */,
+				9641E93178CB817438030895D5FA1B65 /* BlueSocket-umbrella.h */,
+				91E2D24DA148604E41EA0F3916370B29 /* BlueSocket.debug.xcconfig */,
+				5C70E382A7D4076734F710E31AF77434 /* BlueSocket.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BlueSocket";
+			sourceTree = "<group>";
+		};
+		B0975D97A0B239DAC683BDE1040BB9D1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0893B7F4616F04F1C441F2E3A8D8F9C2 /* BlueSocket */,
+				7E28BECBC01796544A78F22E70A33B3A /* BlueSSLService */,
+				03EB70CDFA4850193FBC704F2D06322F /* PostgresClientKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				B0975D97A0B239DAC683BDE1040BB9D1 /* Pods */,
+				D277C8E9B16FF7102E5761C976372AD0 /* Products */,
+				438F07F4A29474A8391CE5E893496717 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D277C8E9B16FF7102E5761C976372AD0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2EAA4A7F572E0FFFDA0F24140040D388 /* BlueSocket */,
+				85E0C895BE0C0B4338F1ED09E13B77A0 /* BlueSSLService */,
+				310D2C5E2822A62828E7C113514F5D6F /* Pods-PostgressIOS */,
+				1200A18F93AF2572D5E81FC08F0BCCBE /* PostgresClientKit */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F55D5CCB8006BAB01D538D06D3FA45D9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7A7A786732799E72CA63678960983E1F /* BlueSSLService.modulemap */,
+				EA8788D6C1DFF907E3BD4C3851CB15B8 /* BlueSSLService-dummy.m */,
+				C4743BBE972F3B90D2E1315E25F7EB29 /* BlueSSLService-Info.plist */,
+				741837CD54968895378558EE786AAB09 /* BlueSSLService-prefix.pch */,
+				FA087A29A89B317996C2AA41A0EBE997 /* BlueSSLService-umbrella.h */,
+				20DF760C5822B43DF1BA2AC50300A396 /* BlueSSLService.debug.xcconfig */,
+				3343D4744D64F3D0194773329EBE4867 /* BlueSSLService.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BlueSSLService";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4FDFF5C780CFA5967A313DB8D2716C3C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C6A6A2EC7F3CB18C42F043ACB639B3E /* BlueSocket-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8466D4072D03D710D652D883DF3969B3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A17FDBBC1EFA127645800560774D9EA3 /* PostgresClientKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3C6F1D1CD6E6A338FE9E8A260864C8C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E64DA03BE8941B7A26A05AB7AB30BE89 /* BlueSSLService-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBAC7AC6B149CE83BC85129B335E07CD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF95B198B4B67C53B99ED5F7793EF611 /* Pods-PostgressIOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1ED4B27EB7078A59D74FBC2F7E94453F /* Pods-PostgressIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BC8EBFC264756055AD45F854E7B0C6F /* Build configuration list for PBXNativeTarget "Pods-PostgressIOS" */;
+			buildPhases = (
+				CBAC7AC6B149CE83BC85129B335E07CD /* Headers */,
+				F059DB58B0C07A487655ADF6B8C3A307 /* Sources */,
+				52A7ACB31ED72B6FFC89C7D7FD9C7A52 /* Frameworks */,
+				AA8AEEDC8DA9521676B0742CCFAEBBE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				921293891673F2A80F88B9C0713F3BDE /* PBXTargetDependency */,
+				E65E245643C3E9E8E025192D4C57A102 /* PBXTargetDependency */,
+				7A2DAE993C147083F3E64AB1A0A439AE /* PBXTargetDependency */,
+			);
+			name = "Pods-PostgressIOS";
+			productName = Pods_PostgressIOS;
+			productReference = 310D2C5E2822A62828E7C113514F5D6F /* Pods-PostgressIOS */;
+			productType = "com.apple.product-type.framework";
+		};
+		469552EB79715699476A4B13FA33A3F9 /* PostgresClientKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DC045ED6A10FD46394E073D8D1EFD40 /* Build configuration list for PBXNativeTarget "PostgresClientKit" */;
+			buildPhases = (
+				8466D4072D03D710D652D883DF3969B3 /* Headers */,
+				C70FA5FCCE824443FC4BCABFC5F24856 /* Sources */,
+				1BB30FEC88A81111D42C4AE407982CF8 /* Frameworks */,
+				A2CA945989388A0E77A581758AEB8D97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BBE55A7E1C5E8A2D8D83992424BF7F4 /* PBXTargetDependency */,
+				AA577E5A2463773530BDAE5DFB126C88 /* PBXTargetDependency */,
+			);
+			name = PostgresClientKit;
+			productName = PostgresClientKit;
+			productReference = 1200A18F93AF2572D5E81FC08F0BCCBE /* PostgresClientKit */;
+			productType = "com.apple.product-type.framework";
+		};
+		9717BE7FCECEF299173A5D71C18B19F5 /* BlueSocket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 003B7496F1BBC5A73A55E20AFC6EDC94 /* Build configuration list for PBXNativeTarget "BlueSocket" */;
+			buildPhases = (
+				4FDFF5C780CFA5967A313DB8D2716C3C /* Headers */,
+				8B1883EE2EE671F2AE92F8CA8BABB56B /* Sources */,
+				E650C477EF1F47F440A1682AB54E0E2B /* Frameworks */,
+				5F1A422BC0E943C00DC6B359D908E54B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlueSocket;
+			productName = Socket;
+			productReference = 2EAA4A7F572E0FFFDA0F24140040D388 /* BlueSocket */;
+			productType = "com.apple.product-type.framework";
+		};
+		FCBA8B05012DBAAB467DAB2B19D7DFBA /* BlueSSLService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD6C4E2B6689E31A4DD49FAE3C04C45D /* Build configuration list for PBXNativeTarget "BlueSSLService" */;
+			buildPhases = (
+				B3C6F1D1CD6E6A338FE9E8A260864C8C /* Headers */,
+				35DC4C9640C5F701BD5B1B28FCABA848 /* Sources */,
+				6C3D8D19DA8820FCEEFF8DF1B1852D3D /* Frameworks */,
+				86D905365217E2BD40ED09526DEEEEBD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20471735943F8EC06F46526101292597 /* PBXTargetDependency */,
+			);
+			name = BlueSSLService;
+			productName = SSLService;
+			productReference = 85E0C895BE0C0B4338F1ED09E13B77A0 /* BlueSSLService */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = D277C8E9B16FF7102E5761C976372AD0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9717BE7FCECEF299173A5D71C18B19F5 /* BlueSocket */,
+				FCBA8B05012DBAAB467DAB2B19D7DFBA /* BlueSSLService */,
+				1ED4B27EB7078A59D74FBC2F7E94453F /* Pods-PostgressIOS */,
+				469552EB79715699476A4B13FA33A3F9 /* PostgresClientKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F1A422BC0E943C00DC6B359D908E54B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86D905365217E2BD40ED09526DEEEEBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2CA945989388A0E77A581758AEB8D97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA8AEEDC8DA9521676B0742CCFAEBBE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		35DC4C9640C5F701BD5B1B28FCABA848 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF0019B37C2CB7128517A6B92AAB7574 /* BlueSSLService-dummy.m in Sources */,
+				B6DBA684C01E7FEB88E38A4ED809FC0F /* SSLPointerTricks.swift in Sources */,
+				DA44084145CD67EFD8C24C4C7B43EEC3 /* SSLService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B1883EE2EE671F2AE92F8CA8BABB56B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F1292CB3902B5AC6A8ADAF426962885 /* BlueSocket-dummy.m in Sources */,
+				AC3C94C5C351545F1A40DFDFDDDC8115 /* Socket.swift in Sources */,
+				0C72B604F3AEC56F72F6634B5E8E21EB /* SocketProtocols.swift in Sources */,
+				2DC7381B31D14AC9362FC2F62AD9F3E3 /* SocketUtils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C70FA5FCCE824443FC4BCABFC5F24856 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8A772378396C712EFA3E3EA9238A279 /* AuthenticationCleartextPasswordResponse.swift in Sources */,
+				791192D55BF15D8EABCC9C4D48369AD3 /* AuthenticationMD5PasswordResponse.swift in Sources */,
+				60C3130C5CC66B57285E4525248E6732 /* AuthenticationOKResponse.swift in Sources */,
+				7F591557C4CBA7F9C9560F35F93CFF0F /* AuthenticationResponse.swift in Sources */,
+				BFBE77C649BDF2FC5A09A4271C0829F4 /* AuthenticationSASLContinueResponse.swift in Sources */,
+				17FB7FFFA27A23BB17311B1104BE3D41 /* AuthenticationSASLFinalResponse.swift in Sources */,
+				F533305E5CD39004D4DC5BF4488385E4 /* AuthenticationSASLResponse.swift in Sources */,
+				A3CE493A715C3475FB944A12BE00AB9F /* BackendKeyDataResponse.swift in Sources */,
+				306B254341D212FDDB95D2906E6218AA /* BindCompleteResponse.swift in Sources */,
+				89CDEE7A5F4F8705E4EFB17D7EF1B7B2 /* BindRequest.swift in Sources */,
+				2969F05248E0ED2E461846EF08AB6ED7 /* CloseCompleteResponse.swift in Sources */,
+				CD7B3E462132A0DE270FD961B836F38A /* ClosePortalRequest.swift in Sources */,
+				96F976026F5F45FDAF455BEEF0E6C499 /* CloseStatementRequest.swift in Sources */,
+				DA1DBF4B87D617A680B7C3CEB6EDFD53 /* ColumnMetadata.swift in Sources */,
+				78939DE17C54B4F86565CA4ACFC3E397 /* CommandCompleteResponse.swift in Sources */,
+				D787A6C419A2B8244EDB1B478CA1EC58 /* Connection.swift in Sources */,
+				6C624DB43904CBFC5634A6DF56093AD8 /* ConnectionConfiguration.swift in Sources */,
+				30CA68FB20A51C5741ED9F8DDA5F78A1 /* ConnectionDelegate.swift in Sources */,
+				913591710CBD87A5E7569DA9D619478F /* ConnectionPool.swift in Sources */,
+				EA377D09D177D8E7AA7F221C992E53EB /* ConnectionPoolConfiguration.swift in Sources */,
+				171B17C1849BB150E89C73C463ABB17E /* ConnectionPoolMetrics.swift in Sources */,
+				9392BBD2935808464A141888272794C5 /* Credential.swift in Sources */,
+				0EC11155CA1F4CCE3C305ECE1632E6C0 /* Crypto.swift in Sources */,
+				F716C70C2F244400055B576CF53E5B2B /* Cursor.swift in Sources */,
+				C5A2C71DFDBD91A60122DA85BC273831 /* DataRowResponse.swift in Sources */,
+				C459BD3BB80A89703BBC483F9717596C /* DescribePortalRequest.swift in Sources */,
+				17434BDD995E760EDDCEA5037C43A08F /* EmptyQueryResponse.swift in Sources */,
+				85DA87A99D0F06116D962365118424D8 /* ErrorResponse.swift in Sources */,
+				403B75FE2F25B14598848EB00F0441F6 /* ExecuteRequest.swift in Sources */,
+				3F302B5B786CEA8E5566C954701AA92D /* FlushRequest.swift in Sources */,
+				C7ADB4899F421F7F700E2246C7992E9B /* ISO8601.swift in Sources */,
+				512E81132253ED7399CAA77017112652 /* Logger.swift in Sources */,
+				3369A1C80970D807327017ACA31BD9B2 /* LogHandler.swift in Sources */,
+				3B68F830F585884EA42344C46A727EFB /* LogLevel.swift in Sources */,
+				D88B0307F347FB4FC8044283628E6390 /* LogRecord.swift in Sources */,
+				C570138872CC69DB1DD033F39843631B /* NoDataResponse.swift in Sources */,
+				12A099F7C702B4D2998026EBA6DB70E0 /* Notice.swift in Sources */,
+				99DAD7763CF7DFC67F0B36BA0CEB9471 /* NoticeResponse.swift in Sources */,
+				372D226EB81CF6F0FC09814B2A687FC6 /* NotificationResponse.swift in Sources */,
+				3F41D57B6CCA17D3BC06C27E5BF4F013 /* Parameter.swift in Sources */,
+				B33792603AB775792ED53EBFC80051B7 /* ParameterStatusResponse.swift in Sources */,
+				ADA1510D4067F03BC5D331BA7B6CBDF3 /* ParseCompleteResponse.swift in Sources */,
+				B614D905A145DB24D5CBED6E43E83BAA /* ParseRequest.swift in Sources */,
+				D6DE539DDB06D65651160746BEA05224 /* PasswordMessageRequest.swift in Sources */,
+				6021FC8FA775E1709EEB7CCDDF8BB6E3 /* Postgres.swift in Sources */,
+				57132EFAD5AF3FBC9B40AA29C775A942 /* PostgresByteA.swift in Sources */,
+				2536ABE3D6A3C3242DC43918DA5D3CE3 /* PostgresClientKit-dummy.m in Sources */,
+				B155321603159BF090BEED71AC0E755E /* PostgresDate.swift in Sources */,
+				DF4FEBADE795B40560E136A64752B1F3 /* PostgresError.swift in Sources */,
+				BF128C339DC0AC954A728BDE0FB8E7A1 /* PostgresTime.swift in Sources */,
+				5EB5125A7CE12E94C0C89CC4DADFFC7E /* PostgresTimestamp.swift in Sources */,
+				E1ACD84E86A1E4C2A04C4CA756F6B083 /* PostgresTimestampWithTimeZone.swift in Sources */,
+				921C7111CCB0A84F34CEF3CF4E883490 /* PostgresTimeWithTimeZone.swift in Sources */,
+				17AD6A5C9E0CBA5BF8906F5BE4A00052 /* PostgresValue.swift in Sources */,
+				5F6E6BA03D40BF6C9E1C977ED21BAC78 /* PostgresValueConvertible.swift in Sources */,
+				46925A5B04587A89334BA53FB5FBB581 /* ReadyForQueryResponse.swift in Sources */,
+				432A97A25A7349414726D1349331C207 /* Request.swift in Sources */,
+				67D790AE8D70FB2AFBF546B6656019E4 /* Response.swift in Sources */,
+				E1586CC0E29998802BF3B2A0023C7D14 /* Row.swift in Sources */,
+				9FA97414414F995323CB77C74D041BE5 /* RowDecoder.swift in Sources */,
+				C8BDC39B5C68F6EBCBA4CCB2D412DE62 /* RowDescriptionResponse.swift in Sources */,
+				876E6764D8DDEA32EE7FC715DB87127B /* SASLInitialRequest.swift in Sources */,
+				61098293363CFA330C0B6A8FFF1E7517 /* SASLPrep.swift in Sources */,
+				52206112B9E67BC24C8D8C015DFD08C5 /* SASLRequest.swift in Sources */,
+				CAB85C8528E652F4670210BB794A6882 /* SCRAMSHA256Authenticator.swift in Sources */,
+				4B677B7FA0117E5F10CC1ED6A292C383 /* SSLRequest.swift in Sources */,
+				67163D8AAB2197812195A1C084D63900 /* StartupRequest.swift in Sources */,
+				C2FE4ECCFA48A8CB96E2F3816B706F5B /* Statement.swift in Sources */,
+				33B83F1892B092080963560F2AE7A1AC /* SyncRequest.swift in Sources */,
+				D08DD8D52AF1EA24866FFDC190D40FD9 /* TerminateRequest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F059DB58B0C07A487655ADF6B8C3A307 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38BB5A417752AE48331FE0993537404A /* Pods-PostgressIOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20471735943F8EC06F46526101292597 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BlueSocket;
+			target = 9717BE7FCECEF299173A5D71C18B19F5 /* BlueSocket */;
+			targetProxy = 72FFFCB3C4B3AE535DF8D2837AB45706 /* PBXContainerItemProxy */;
+		};
+		7A2DAE993C147083F3E64AB1A0A439AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PostgresClientKit;
+			target = 469552EB79715699476A4B13FA33A3F9 /* PostgresClientKit */;
+			targetProxy = 0E27711CE81D2A6A27CAA2D7E6A93BEE /* PBXContainerItemProxy */;
+		};
+		921293891673F2A80F88B9C0713F3BDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BlueSSLService;
+			target = FCBA8B05012DBAAB467DAB2B19D7DFBA /* BlueSSLService */;
+			targetProxy = 6423026ACF68603770AAE7C8C41121AE /* PBXContainerItemProxy */;
+		};
+		9BBE55A7E1C5E8A2D8D83992424BF7F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BlueSSLService;
+			target = FCBA8B05012DBAAB467DAB2B19D7DFBA /* BlueSSLService */;
+			targetProxy = 73238A2B119565C1411CB3B3333370F7 /* PBXContainerItemProxy */;
+		};
+		AA577E5A2463773530BDAE5DFB126C88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BlueSocket;
+			target = 9717BE7FCECEF299173A5D71C18B19F5 /* BlueSocket */;
+			targetProxy = AFB14C6224BE4646D48007956C5FB513 /* PBXContainerItemProxy */;
+		};
+		E65E245643C3E9E8E025192D4C57A102 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BlueSocket;
+			target = 9717BE7FCECEF299173A5D71C18B19F5 /* BlueSocket */;
+			targetProxy = 4BC26AA43861D26CD2057A4F9C74DB03 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		255C3479F193EC4BCCF6B0EF922FA95E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C70E382A7D4076734F710E31AF77434 /* BlueSocket.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BlueSocket/BlueSocket-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BlueSocket/BlueSocket-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/BlueSocket/BlueSocket.modulemap";
+				PRODUCT_MODULE_NAME = Socket;
+				PRODUCT_NAME = Socket;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		424D0A2F60159CD682E5984DDD5A3E65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF0AF8BA443D43E99C604A6C196619C2 /* PostgresClientKit.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PostgresClientKit/PostgresClientKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PostgresClientKit/PostgresClientKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PostgresClientKit/PostgresClientKit.modulemap";
+				PRODUCT_MODULE_NAME = PostgresClientKit;
+				PRODUCT_NAME = PostgresClientKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		523DFEFA738B86A2CC7E80F18A4D5B66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3343D4744D64F3D0194773329EBE4867 /* BlueSSLService.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BlueSSLService/BlueSSLService-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BlueSSLService/BlueSSLService-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/BlueSSLService/BlueSSLService.modulemap";
+				PRODUCT_MODULE_NAME = SSLService;
+				PRODUCT_NAME = SSLService;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5EBA087320E9E6976040180C36CEC2D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FA40412BCD5082E41A06FF67B66E5C8 /* PostgresClientKit.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PostgresClientKit/PostgresClientKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PostgresClientKit/PostgresClientKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PostgresClientKit/PostgresClientKit.modulemap";
+				PRODUCT_MODULE_NAME = PostgresClientKit;
+				PRODUCT_NAME = PostgresClientKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7EA58203A1C8B166450E351EFF2E6411 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4189388ECC812D52F332DD8F58EC950 /* Pods-PostgressIOS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PostgressIOS/Pods-PostgressIOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PostgressIOS/Pods-PostgressIOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		92486E5E72E54FAF60E1A7D022C21B10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		934ED2B84836A780113D1F63484628B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C3819751ACE4FA7F2C386D318D990766 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAF244D07EC1EBF6D04D959CEF0CB960 /* Pods-PostgressIOS.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PostgressIOS/Pods-PostgressIOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PostgressIOS/Pods-PostgressIOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D07D95C6702583E899AB2F8CD9FDBB49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20DF760C5822B43DF1BA2AC50300A396 /* BlueSSLService.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BlueSSLService/BlueSSLService-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BlueSSLService/BlueSSLService-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/BlueSSLService/BlueSSLService.modulemap";
+				PRODUCT_MODULE_NAME = SSLService;
+				PRODUCT_NAME = SSLService;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D6B85CFDED1432F543CD74BEC639C4AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91E2D24DA148604E41EA0F3916370B29 /* BlueSocket.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BlueSocket/BlueSocket-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BlueSocket/BlueSocket-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/BlueSocket/BlueSocket.modulemap";
+				PRODUCT_MODULE_NAME = Socket;
+				PRODUCT_NAME = Socket;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		003B7496F1BBC5A73A55E20AFC6EDC94 /* Build configuration list for PBXNativeTarget "BlueSocket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6B85CFDED1432F543CD74BEC639C4AB /* Debug */,
+				255C3479F193EC4BCCF6B0EF922FA95E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0BC8EBFC264756055AD45F854E7B0C6F /* Build configuration list for PBXNativeTarget "Pods-PostgressIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3819751ACE4FA7F2C386D318D990766 /* Debug */,
+				7EA58203A1C8B166450E351EFF2E6411 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DC045ED6A10FD46394E073D8D1EFD40 /* Build configuration list for PBXNativeTarget "PostgresClientKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				424D0A2F60159CD682E5984DDD5A3E65 /* Debug */,
+				5EBA087320E9E6976040180C36CEC2D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				934ED2B84836A780113D1F63484628B2 /* Debug */,
+				92486E5E72E54FAF60E1A7D022C21B10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD6C4E2B6689E31A4DD49FAE3C04C45D /* Build configuration list for PBXNativeTarget "BlueSSLService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D07D95C6702583E899AB2F8CD9FDBB49 /* Debug */,
+				523DFEFA738B86A2CC7E80F18A4D5B66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

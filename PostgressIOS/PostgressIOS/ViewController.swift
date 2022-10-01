@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PostgresClientKit
 
 class ViewController: UIViewController {
     

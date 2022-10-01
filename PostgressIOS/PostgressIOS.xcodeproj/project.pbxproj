@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2EB19BB128E848BF000AAA89 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB19BB028E848BF000AAA89 /* Model.swift */; };
 		2EB19BB328E84987000AAA89 /* ViewController+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB19BB228E84987000AAA89 /* ViewController+Cells.swift */; };
+		376947C0386A12A073EA34F6 /* Pods_PostgressIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3295B6FCF1740C401251DDCA /* Pods_PostgressIOS.framework */; };
 		B1F7B57C28DC23B800252C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7B57B28DC23B800252C79 /* AppDelegate.swift */; };
 		B1F7B57E28DC23B800252C79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7B57D28DC23B800252C79 /* SceneDelegate.swift */; };
 		B1F7B58028DC23B800252C79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7B57F28DC23B800252C79 /* ViewController.swift */; };
@@ -18,8 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		263D1FBBBFCB1EA6ACACB820 /* Pods-PostgressIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostgressIOS.debug.xcconfig"; path = "Target Support Files/Pods-PostgressIOS/Pods-PostgressIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2EB19BB028E848BF000AAA89 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		2EB19BB228E84987000AAA89 /* ViewController+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Cells.swift"; sourceTree = "<group>"; };
+		3295B6FCF1740C401251DDCA /* Pods_PostgressIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PostgressIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1F7B57828DC23B800252C79 /* PostgressIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostgressIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1F7B57B28DC23B800252C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1F7B57D28DC23B800252C79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		B1F7B58428DC23BA00252C79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1F7B58728DC23BA00252C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1F7B58928DC23BA00252C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA08CE683C037ED6488895E0 /* Pods-PostgressIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostgressIOS.release.xcconfig"; path = "Target Support Files/Pods-PostgressIOS/Pods-PostgressIOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376947C0386A12A073EA34F6 /* Pods_PostgressIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BC3DC24EAFCEED03A691720 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3295B6FCF1740C401251DDCA /* Pods_PostgressIOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B1F7B56F28DC23B800252C79 = {
 			isa = PBXGroup;
 			children = (
 				B1F7B57A28DC23B800252C79 /* PostgressIOS */,
 				B1F7B57928DC23B800252C79 /* Products */,
+				B5EC7482AE0CD3BD030EFA85 /* Pods */,
+				2BC3DC24EAFCEED03A691720 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +88,16 @@
 			path = PostgressIOS;
 			sourceTree = "<group>";
 		};
+		B5EC7482AE0CD3BD030EFA85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				263D1FBBBFCB1EA6ACACB820 /* Pods-PostgressIOS.debug.xcconfig */,
+				CA08CE683C037ED6488895E0 /* Pods-PostgressIOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1F7B58C28DC23BA00252C79 /* Build configuration list for PBXNativeTarget "PostgressIOS" */;
 			buildPhases = (
+				5DC4C60318A77AC6B58DD0F8 /* [CP] Check Pods Manifest.lock */,
 				B1F7B57428DC23B800252C79 /* Sources */,
 				B1F7B57528DC23B800252C79 /* Frameworks */,
 				B1F7B57628DC23B800252C79 /* Resources */,
+				C8B095491D85C4C631ED45A6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,6 +165,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5DC4C60318A77AC6B58DD0F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PostgressIOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8B095491D85C4C631ED45A6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PostgressIOS/Pods-PostgressIOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PostgressIOS/Pods-PostgressIOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PostgressIOS/Pods-PostgressIOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B1F7B57428DC23B800252C79 /* Sources */ = {
@@ -290,6 +359,7 @@
 		};
 		B1F7B58D28DC23BA00252C79 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 263D1FBBBFCB1EA6ACACB820 /* Pods-PostgressIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -318,6 +388,7 @@
 		};
 		B1F7B58E28DC23BA00252C79 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA08CE683C037ED6488895E0 /* Pods-PostgressIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
