@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EB19BB128E848BF000AAA89 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB19BB028E848BF000AAA89 /* Model.swift */; };
+		2EB19BB328E84987000AAA89 /* ViewController+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB19BB228E84987000AAA89 /* ViewController+Cells.swift */; };
 		B1F7B57C28DC23B800252C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7B57B28DC23B800252C79 /* AppDelegate.swift */; };
 		B1F7B57E28DC23B800252C79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7B57D28DC23B800252C79 /* SceneDelegate.swift */; };
 		B1F7B58028DC23B800252C79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7B57F28DC23B800252C79 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EB19BB028E848BF000AAA89 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		2EB19BB228E84987000AAA89 /* ViewController+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Cells.swift"; sourceTree = "<group>"; };
 		B1F7B57828DC23B800252C79 /* PostgressIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostgressIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1F7B57B28DC23B800252C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1F7B57D28DC23B800252C79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				B1F7B58428DC23BA00252C79 /* Assets.xcassets */,
 				B1F7B58628DC23BA00252C79 /* LaunchScreen.storyboard */,
 				B1F7B58928DC23BA00252C79 /* Info.plist */,
+				2EB19BB028E848BF000AAA89 /* Model.swift */,
+				2EB19BB228E84987000AAA89 /* ViewController+Cells.swift */,
 			);
 			path = PostgressIOS;
 			sourceTree = "<group>";
@@ -140,7 +146,9 @@
 			files = (
 				B1F7B58028DC23B800252C79 /* ViewController.swift in Sources */,
 				B1F7B57C28DC23B800252C79 /* AppDelegate.swift in Sources */,
+				2EB19BB328E84987000AAA89 /* ViewController+Cells.swift in Sources */,
 				B1F7B57E28DC23B800252C79 /* SceneDelegate.swift in Sources */,
+				2EB19BB128E848BF000AAA89 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
