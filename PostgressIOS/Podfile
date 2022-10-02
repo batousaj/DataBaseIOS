@@ -7,4 +7,6 @@ target 'PostgressIOS' do
 
   # Pods for PostgressIOS
   pod 'PostgresClientKit', '~> 1.5'
+  pod 'FBSDKLoginKit'
+
 end

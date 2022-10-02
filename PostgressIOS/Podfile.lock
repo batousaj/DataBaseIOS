@@ -2,24 +2,41 @@ PODS:
   - BlueSocket (1.0.52)
   - BlueSSLService (1.0.52):
     - BlueSocket (~> 1.0.52)
+  - FBAEMKit (13.2.0):
+    - FBSDKCoreKit_Basics (= 13.2.0)
+  - FBSDKCoreKit (13.2.0):
+    - FBAEMKit (= 13.2.0)
+    - FBSDKCoreKit_Basics (= 13.2.0)
+  - FBSDKCoreKit_Basics (13.2.0)
+  - FBSDKLoginKit (13.2.0):
+    - FBSDKCoreKit (= 13.2.0)
   - PostgresClientKit (1.5.0):
     - BlueSocket (~> 1.0)
     - BlueSSLService (~> 1.0)
 
 DEPENDENCIES:
+  - FBSDKLoginKit
   - PostgresClientKit (~> 1.5)
 
 SPEC REPOS:
   trunk:
     - BlueSocket
     - BlueSSLService
+    - FBAEMKit
+    - FBSDKCoreKit
+    - FBSDKCoreKit_Basics
+    - FBSDKLoginKit
     - PostgresClientKit
 
 SPEC CHECKSUMS:
   BlueSocket: 1acd943acb07b55905291d608649fcfbf8cbd57d
   BlueSSLService: b791a3db95b841973c44870f59bbf94628845b58
+  FBAEMKit: c2b2895363b7e57192013d1dc49fdf498b28624c
+  FBSDKCoreKit: 58139803d861e72c7661dc875611a759352a55ac
+  FBSDKCoreKit_Basics: 1ffc68326a5ece051d85574f02a0adcf27c2a5f2
+  FBSDKLoginKit: 19e2a878556c2ee4f20486dc406e582783cd7578
   PostgresClientKit: 46759d7926389529314fb23f2be44e0246808de8
 
-PODFILE CHECKSUM: b5f9a54fd34cb85708899f5960c4bf62781f72a8
+PODFILE CHECKSUM: b29412c873f30f0d4b9e7d907b37ff109e53f5d7
 
 COCOAPODS: 1.11.2
