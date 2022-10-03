@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E22F95828EAA7440049FC3E /* NewAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E22F95728EAA7440049FC3E /* NewAPI.swift */; };
 		2EB169BE28E97BE60068ACB6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB169BD28E97BE60068ACB6 /* LoginViewController.swift */; };
 		2EB169C328E97CBB0068ACB6 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EB169C228E97CBB0068ACB6 /* Login.storyboard */; };
 		2EB169C628E9A31B0068ACB6 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB169C528E9A31B0068ACB6 /* DatabaseManager.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		263D1FBBBFCB1EA6ACACB820 /* Pods-PostgressIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostgressIOS.debug.xcconfig"; path = "Target Support Files/Pods-PostgressIOS/Pods-PostgressIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		2E22F95728EAA7440049FC3E /* NewAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAPI.swift; sourceTree = "<group>"; };
 		2EB169BD28E97BE60068ACB6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2EB169C228E97CBB0068ACB6 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		2EB169C428E981C90068ACB6 /* PostgressIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PostgressIOS.entitlements; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2E22F95628EAA6050049FC3E /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				2EB169C528E9A31B0068ACB6 /* DatabaseManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		2EB169BF28E97BEA0068ACB6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				2EB19BB028E848BF000AAA89 /* Model.swift */,
-				2EB169C528E9A31B0068ACB6 /* DatabaseManager.swift */,
+				2E22F95728EAA7440049FC3E /* NewAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -109,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				2EB169C428E981C90068ACB6 /* PostgressIOS.entitlements */,
+				2E22F95628EAA6050049FC3E /* Database */,
 				2EB169C128E97C0E0068ACB6 /* API */,
 				2EB169C028E97BFA0068ACB6 /* Views */,
 				2EB169BF28E97BEA0068ACB6 /* Controllers */,
@@ -251,6 +262,7 @@
 				2EB169BE28E97BE60068ACB6 /* LoginViewController.swift in Sources */,
 				B1F7B58028DC23B800252C79 /* CityViewController.swift in Sources */,
 				B1F7B57C28DC23B800252C79 /* AppDelegate.swift in Sources */,
+				2E22F95828EAA7440049FC3E /* NewAPI.swift in Sources */,
 				2EB19BB328E84987000AAA89 /* ViewController+Cells.swift in Sources */,
 				B1F7B57E28DC23B800252C79 /* SceneDelegate.swift in Sources */,
 				2EB19BB128E848BF000AAA89 /* Model.swift in Sources */,
