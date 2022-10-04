@@ -14,17 +14,21 @@ class CityViewController: UIViewController {
     
     //private variable
     var cityList = [Model.CityInfo]()
+    var iconList = [Model.IconCity]()
 
+    var callbackCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.setupNavigator()
+        self.setupDatabaseManager()
         self.setupTableView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.setupDatabaseManager()
+//        self.setupDatabaseManager()
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,6 +70,7 @@ class CityViewController: UIViewController {
         
         NSLayoutConstraint.activate(contraints)
         
+        self.flechData()
     }
     
     func setupDatabaseManager() {
@@ -79,16 +84,20 @@ class CityViewController: UIViewController {
         do {
             try DatabaseService.shared.setupDatabaseWith(configuration)
             DatabaseService.shared.database!.delegate = self
-            self.flechData()
         } catch {
             print("Connect to sever error")
         }
     }
     
     func flechData() {
-        self.getAllData()
+        self.getAllData(reload : false)
         let citys = self.getCityInCountry()
         self.getCurrentTemp(citys: citys)
+        
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { timer in
+            self.callbackCount = 0
+            self.getCurrentTemp(citys: citys)
+        }
     }
     
 }
@@ -100,30 +109,49 @@ extension CityViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cityList.count
+        return self.callbackCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CityCells", for: indexPath) as! TableViewCell
         
-        NewAPI.shared.downloadIcon(path: "/img/wn/\(self.cityList[indexPath.row].icon)@2x.png") { results in
-            switch (results) {
-            case .success(let data) :
-                DispatchQueue.main.async {
-                    cell.temp = "\(self.cityList[indexPath.row].temp)"
-                    cell.name = self.cityList[indexPath.row].city
-                    cell.image = UIImage(data: data)
-                }
-                break
-                
-            case .failure(let error) :
-                print("error : \(error.localizedDescription)")
-                break
-            }
+        if self.iconList[indexPath.row].image.count > 0 {
+            cell.temp = "\(self.cityList[indexPath.row].temp)"
+            cell.name = self.cityList[indexPath.row].city
+            cell.image = UIImage(data: self.iconList[indexPath.row].image)
         }
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
+
+        let more = UIContextualAction(style: .normal, title: "More", handler: { action, view, handler in
+            handler(true)
+        })
+        
+        let delete = UIContextualAction(style: .destructive, title: "Delete", handler: { action, view, handler in
+            self.deleteTable(condition: cell.name ) { success in
+                if success {
+                    self.callbackCount-=1
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
+                    if let index = self.cityList.firstIndex(where: {$0.city == cell.name}) {
+                        self.cityList.remove(at: index)
+                    }
+                    if let index = self.iconList.firstIndex(where: {$0.city == cell.name}) {
+                        self.iconList.remove(at: index)
+                    }
+                    self.tempoTable.reloadData()
+                }
+            }
+            handler(true)
+        })
+        
+        let configuration = UISwipeActionsConfiguration(actions: [delete,more])
+        return configuration
+   }
     
 }
 
@@ -156,19 +184,25 @@ extension CityViewController {
 
 extension CityViewController {
     
-    func getAllData() {
+    func getAllData(reload : Bool) {
         self.selectTable { data, successed in
             if successed {
+                print("Updated data")
+                self.updateIconOfCity(data: data!)
                 self.updateValueOfCity(data: data!)
-                DispatchQueue.main.async {
-                    self.tempoTable.reloadData()
+                if reload {
+                    DispatchQueue.main.async {
+                        self.tempoTable.reloadData()
+                    }
                 }
+            } else {
+                print("Updated data failed")
             }
         }
     }
     
     func getCurrentTemp(citys : [String]) {
-        
+        print("getCurrentTemp")
         for city in citys {
             let query = [
                 "q" : city,
@@ -184,18 +218,43 @@ extension CityViewController {
                     
                     if self.cityList.count > 0 {
                         if self.cityList.firstIndex(where: {$0.city == city}) != nil {
-                            self.updateValueCity(value: dict)
+                            self.updateImageIcon(dict: dict, type: "update")
                         } else {
-                            self.insertTable(value: dict)
+                            self.updateImageIcon(dict: dict, type: "add")
                         }
                     } else {
-                        self.insertTable(value: dict)
+                        self.updateImageIcon(dict: dict, type: "add")
                     }
                     break
                 case .failure(let failed) :
                     print("error : \(failed.localizedDescription)")
                     break
                 }
+            }
+        }
+    }
+    
+    func updateImageIcon(dict: [String : Any], type : String) {
+        NewAPI.shared.downloadIcon(path: "/img/wn/\(dict["icon"] as! String)@2x.png") { results in
+            switch (results) {
+            case .success(let data) :
+                if type == "add" {
+                    self.iconList.append(Model.IconCity(city: dict["city"] as! String, icon: dict["icon"] as! String, image: data))
+                    self.insertTable(value: dict)
+                    
+                } else {
+                    if let index = self.iconList.firstIndex(where: {$0.city == dict["city"] as! String}) {
+                        self.iconList[index].icon = dict["icon"] as! String
+                        self.iconList[index].image = data
+                    }
+                    self.updateValueCity(value: dict)
+                    print("self.iconList : \(self.iconList.count)")
+                }
+                break
+                
+            case .failure(let error) :
+                print("error : \(error.localizedDescription)")
+                break
             }
         }
     }
@@ -242,6 +301,30 @@ extension CityViewController {
         }
     }
     
+    func updateIconOfCity(data : [String : Any]) {
+        if self.iconList.count > 0 {
+            if let index = iconList.firstIndex(where: {$0.city == data["city"] as! String}) {
+                self.iconList[index].icon = data["icon"] as! String
+            } else {
+                self.iconList.append(
+                    Model.IconCity.init(
+                        city : data["city"] as! String,
+                        icon : data["icon"] as! String,
+                        image : Data()
+                    )
+                )
+            }
+        } else {
+            self.iconList.append(
+                Model.IconCity.init(
+                    city : data["city"] as! String,
+                    icon : data["icon"] as! String,
+                    image : Data()
+                )
+            )
+        }
+    }
+    
     func collectData(data : Package.Results, city : String) -> [String : Any] {
         var results = [String:Any]()
         results["id"] = data.id
@@ -259,10 +342,11 @@ extension CityViewController {
 extension CityViewController {
     
     func updateValueCity(value : [String:Any]) {
-        let id = "\(value["id"]!)"
+        let id = "id = \(value["id"]!)"
+        self.callbackCount+=1
         DatabaseService.shared.database?.updateTable("mycitys", value: value, where_: id , successHandler: { success in
-            if success {
-                self.getAllData()
+            if self.callbackCount == self.iconList.count {
+                self.getAllData(reload: true)
             }
         })
     }
@@ -277,10 +361,13 @@ extension CityViewController {
             row.append($1)
         }
         
+        self.callbackCount+=1
         //continue coding here?
         DatabaseService.shared.database?.insertTable("mycitys", column: col, value: row) { results in
             if results {
-                self.getAllData()
+                if self.callbackCount == self.iconList.count {
+                    self.getAllData(reload: true)
+                }
             } else {
                 print("Insert failed")
             }
@@ -311,6 +398,12 @@ extension CityViewController {
             
         })
         completionHandler(nil,false)
+    }
+    
+    func deleteTable(condition : String, completionHandler : @escaping (Bool) -> Void) {
+        DatabaseService.shared.database?.deleteTable("mycitys", where_: "city = '\(condition)'", successHandler: { successed in
+            completionHandler(successed)
+        })
     }
 }
 

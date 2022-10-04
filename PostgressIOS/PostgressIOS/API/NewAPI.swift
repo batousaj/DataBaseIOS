@@ -11,6 +11,8 @@ class NewAPI {
     
     static let shared = NewAPI()
     
+    var cache = NSCache<NSString,NSData>()
+    
     init() {}
     
     private func setComponent(path:String, query : [String:Any]) -> URLComponents {
@@ -77,6 +79,11 @@ class NewAPI {
         component.host = "openweathermap.org"
         component.path = path
         
+        if cache.object(forKey: path as NSString) != nil {
+            print("Image was cache")
+            return
+        }
+        
         if let url = component.url {
 
             let task = URLSession.shared.downloadTask(with: url) { url, response, error in
@@ -97,6 +104,7 @@ class NewAPI {
 
                 do {
                     let data = try Data(contentsOf: url)
+                    self.cache.setObject(data as NSData, forKey: path as NSString)
                     completion(.success(data))
                 } catch {
                     completion(.failure(Status.badResponse))

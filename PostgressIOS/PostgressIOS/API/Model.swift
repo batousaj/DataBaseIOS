@@ -32,6 +32,12 @@ class Model {
         var icon : String
     }
     
+    struct IconCity {
+        var city : String
+        var icon : String
+        var image : Data
+    }
+    
     static func apiKey() -> String? {
         
         if let appid = UserDefaults.standard.value(forKey: "app_id") {

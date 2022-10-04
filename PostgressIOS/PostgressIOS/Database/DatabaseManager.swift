@@ -75,10 +75,10 @@ class DatabaseManager {
         
         do {
             let prepare = try connection?.prepareStatement(text: statement)
-//            defer {
-//                prepare?.close()
-//            }
-            let execute = try prepare?.execute()
+            defer {
+                prepare?.close()
+            }
+            _ = try prepare?.execute()
             
             successHandler(true)
         } catch {
@@ -88,7 +88,20 @@ class DatabaseManager {
     }
     
     func deleteTable(_ table: String, where_: String, successHandler: @escaping (Bool) -> Void) {
-        //
+        
+        let statement = "DELETE FROM \(table) WHERE \(where_);"
+        
+        do {
+            let prepare = try connection?.prepareStatement(text: statement)
+            defer {
+                prepare?.close()
+            }
+            _ = try prepare?.execute()
+            
+            successHandler(true)
+        } catch {
+            successHandler(false)
+        }
     }
     
     func selectTable(_ columns: [String]?, table: String, whereCondition: String?, extra: String?, recordBlock: @escaping ( [Any]? ,Bool ) -> Void) {
@@ -128,7 +141,29 @@ class DatabaseManager {
     }
     
     func updateTable(_ table: String, value: [String : Any], where_: String, successHandler: @escaping (Bool) -> Void) {
-        //
+        var valueSet = ""
+        
+        for (key,val) in value {
+            if val is String {
+                valueSet = valueSet + "," + " " + key + " = " + "'\(val)'"
+            } else if val is Int {
+                valueSet = valueSet + "," + " " + key + " = " + "\(val)"
+            }
+        }
+        valueSet.removeFirst()
+        
+        let statement = "UPDATE \(table) SET \(valueSet)  WHERE \(where_);"
+        
+        do {
+            let prepare = try connection!.prepareStatement(text: statement)
+            defer { prepare.close() }
+            
+            let cursor = try prepare.execute()
+            defer { cursor.close() }
+            successHandler(true)
+        } catch {
+            successHandler(false)
+        }
     }
     
 }
