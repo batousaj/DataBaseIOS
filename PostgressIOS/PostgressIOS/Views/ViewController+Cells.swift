@@ -12,7 +12,6 @@ class TableViewCell : UITableViewCell {
     
     let title:UILabel! = {
         let tile = UILabel()
-        tile.translatesAutoresizingMaskIntoConstraints = false
         tile.clipsToBounds = true
         tile.textAlignment = .left
         tile.textColor = .black
@@ -23,13 +22,19 @@ class TableViewCell : UITableViewCell {
     
     let tempo:UILabel! = {
         let tile = UILabel()
-        tile.translatesAutoresizingMaskIntoConstraints = false
         tile.clipsToBounds = true
         tile.textAlignment = .left
         tile.textColor = .black
         tile.font = .systemFont(ofSize: 15)
 
         return tile
+    }()
+    
+    let iconView:UIImageView! = {
+        let view = UIImageView()
+        view.clipsToBounds = true
+
+        return view
     }()
     
     public var name : String! {
@@ -41,6 +46,12 @@ class TableViewCell : UITableViewCell {
     public var temp : String! {
         didSet {
             self.tempo.text = temp
+        }
+    }
+    
+    public var image : UIImage! {
+        didSet {
+            self.iconView.image = image
         }
     }
     
@@ -63,6 +74,10 @@ class TableViewCell : UITableViewCell {
         
         self.contentView.addSubview(self.title)
         self.contentView.addSubview(self.tempo)
+        self.contentView.addSubview(self.iconView)
+        title.translatesAutoresizingMaskIntoConstraints = false
+        tempo.translatesAutoresizingMaskIntoConstraints = false
+        iconView.translatesAutoresizingMaskIntoConstraints = false
         
         let contraints = [
             self.title.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
@@ -81,6 +96,15 @@ class TableViewCell : UITableViewCell {
         ]
         
         NSLayoutConstraint.activate(contraints1)
+        
+        let contraints2 = [
+            self.iconView.leadingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -65),
+            self.iconView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -5),
+            self.iconView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 5),
+            self.iconView.heightAnchor.constraint(equalToConstant: 60)
+        ]
+        
+        NSLayoutConstraint.activate(contraints2)
     }
 
 }

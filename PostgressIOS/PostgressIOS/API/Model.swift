@@ -48,10 +48,10 @@ class Package {
     
     struct Results : Decodable {
         var coord:Coord!
-        var weather:Weather!
+        var weather:[Weather]!
         var main:Main!
         var sys:Sys!
-        var id = ""
+        var id = 0
         
         enum CodingKeys : String, CodingKey {
             case coord
@@ -63,30 +63,88 @@ class Package {
         
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
+            
+            coord = try container.decode(Coord.self, forKey: .coord)
+            weather = try container.decode([Weather].self, forKey: .weather)
+            main = try container.decode(Main.self, forKey: .main)
+            sys = try container.decode(Sys.self, forKey: .sys)
+            id = try container.decode(Int.self, forKey: .id)
         }
     }
     
-    struct Coord {
-        var lat = ""
-        var lon = ""
+    struct Coord : Decodable {
+        var lat:Float = 0.0
+        var lon:Float = 0.0
         
+        enum CodingKeys : String, CodingKey {
+            case lon
+            case lat
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            
+            lat = try container.decode(Float.self, forKey: CodingKeys.lat)
+            lon = try container.decode(Float.self, forKey: CodingKeys.lon)
+            
+        }
     }
     
-    struct Weather {
-        var id = ""
+    struct Weather : Decodable {
+        var id = 0
         var main = ""
         var icon = ""
+        
+        enum CodingKeys : String, CodingKey {
+            case id
+            case main
+            case icon
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            
+            id = try container.decode(Int.self, forKey: CodingKeys.id)
+            main = try container.decode(String.self, forKey: CodingKeys.main)
+            icon = try container.decode(String.self, forKey: CodingKeys.icon)
+        }
     }
     
-    struct Main {
-        var temp = ""
-        var temp_max = ""
-        var temp_min = ""
+    struct Main : Decodable {
+        var temp:Float
+        var temp_max:Float
+        var temp_min:Float
+        
+        enum CodingKeys : String, CodingKey {
+            case temp
+            case temp_max
+            case temp_min
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            
+            temp = try container.decode(Float.self, forKey: CodingKeys.temp)
+            temp_max = try container.decode(Float.self, forKey: CodingKeys.temp_max)
+            temp_min = try container.decode(Float.self, forKey: CodingKeys.temp_min)
+        }
     }
     
-    struct Sys {
-        var id = ""
+    struct Sys : Decodable {
+        var id = 0
         var country = ""
+        
+        enum CodingKeys : String, CodingKey {
+            case id
+            case country
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            
+            id = try container.decode(Int.self, forKey: CodingKeys.id)
+            country = try container.decode(String.self, forKey: CodingKeys.country)
+        }
     }
     
 }

@@ -120,8 +120,8 @@ class DatabaseManager {
             for row in cursor {
                 let columns = try row.get().columns
                 results = columns
+                recordBlock(results,true)
             }
-            recordBlock(results,true)
         } catch {
             recordBlock(nil,false)
         }

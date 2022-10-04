@@ -35,7 +35,7 @@ class NewAPI {
         return request
     }
     
-    func newAPI(path: String, method : String, query : [String:Any], completion : @escaping (Result<[String:Any],Error>) -> Void) {
+    func newAPI(path: String, method : String, query : [String:Any], completion : @escaping (Result<Package.Results,Error>) -> Void) {
         
         let component = self.setComponent(path: path, query: query)
         if let url = component.url {
@@ -55,8 +55,8 @@ class NewAPI {
                 
                 do {
                     if let data = data {
-                        let json = try JSONSerialization.jsonObject(with: data)
-                        completion(.success(json as! [String : Any]))
+                        let json = try JSONDecoder().decode(Package.Results.self, from: data)
+                        completion(.success(json))
                     }
                 } catch {
                     completion(.failure(Status.badResponse))
@@ -68,6 +68,46 @@ class NewAPI {
         } else {
             completion(.failure(Status.requestFailed))
         }
+    }
+    
+    func downloadIcon(path: String, completion : @escaping (Result<Data,Error>) -> Void) {
+//      http://openweathermap.org/img/wn/10d@2x.png
+        var component = URLComponents()
+        component.scheme = "https"
+        component.host = "openweathermap.org"
+        component.path = path
+        
+        if let url = component.url {
+
+            let task = URLSession.shared.downloadTask(with: url) { url, response, error in
+                if error != nil {
+                    completion(.failure(Status.requestFailed))
+                    return
+                }
+
+                guard let response_ = response as? HTTPURLResponse , (200...299).contains(response_.statusCode) else {
+                    completion(.failure(Status.badResponse))
+                    return
+                }
+
+                guard let url = url else {
+                    completion(.failure(Status.badResponse))
+                    return
+                }
+
+                do {
+                    let data = try Data(contentsOf: url)
+                    completion(.success(data))
+                } catch {
+                    completion(.failure(Status.badResponse))
+                }
+            }
+
+            task.resume()
+            return
+        }
+        
+        completion(.failure(Status.requestFailed))
     }
     
 }
